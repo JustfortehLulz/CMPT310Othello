@@ -65,28 +65,305 @@ void OthelloBoard::check_legal_moves(int turn)
 			if(boardArr[i] == 0)
 			{
 			// check for white pieces
-				// if on the top row
-				if(!(i-8 < 0))
+				int up = i - 8;
+				int left = i - 1;
+				int down = i + 8;
+				int right = i + 1;
+				
+				int down_right = i + 9;
+				int down_left = i + 7;
+				int up_right = i - 7;
+				int up_left = i - 9;
+				// if not on the top row
+				// UP
+				if(!(up < 0))
 				{
-					// check up
-					while(boardArr[i-8] == 1)
+					// check up if theres a white piece
+					while(boardArr[up] == 1)
 					{
-						i = i - 8;
-						if(i-8 < 0)
+						// keeps going up until either hits the edge or finds an empty spot
+						up -= 8;
+						if(up < 0)
 						{
 							break;
 						}
-						if(boardArr[i] == -1)
+						if(boardArr[up] == -1)
 						{
 							// this is a legal move
-							legalMoves.push_back(i);
-							cout << "FHJIODSJ" << endl;
+							legalMoves.push_back(up);
+						}
+					}
+				}
+				// if not on the left most column
+				// LEFT
+				if(!(i % 8 == 0))
+				{
+					while(boardArr[left] == 1)
+					{
+						left -= 1;
+						if(left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[left] == -1)
+						{
+							legalMoves.push_back(left);
+						}
+					}
+				}
+				//DOWN
+				if(!(i > 55))
+				{
+					while(boardArr[down] == 1)
+					{
+						down += 8;
+						if(down > 63)
+						{
+							break;
+						}
+						if(boardArr[down] == -1)
+						{
+							legalMoves.push_back(down);
+						}
+					}
+				}
+				//RIGHT
+				if(!(i % 8 == 7))
+				{
+					while(boardArr[right] == 1)
+					{
+						right += 1;
+						if(right % 8 == 7)
+						{
+							break;
+						}
+						if(boardArr[right] == -1)
+						{
+							legalMoves.push_back(right);
+						}
+					}
+				}
+				//DOWN-RIGHT
+				if(!( (i > 55) || (i % 8 == 7) ))
+				{
+					while(boardArr[down_right] == 1)
+					{
+						down_right += 9;
+						if(down_right > 55 || down_right % 8 == 7)
+						{
+							break;
+						}
+						if(boardArr[down_right] == -1)
+						{
+							legalMoves.push_back(down_right);
+						}
+					}
+				}
+				//DOWN-LEFT
+				if(! (i > 55) || (i % 8 == 0))
+				{
+					while(boardArr[down_left] == 1)
+					{
+						down_left += 7;
+						if(down_left > 55 || down_left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[down_left] == -1)
+						{
+							legalMoves.push_back(down_left);
+						}
+					}
+				}
+				//UP-RIGHT
+				if(! ((up < 0) || (i % 8 == 7)))
+				{
+					up_right -= 7;
+					while(boardArr[up_right] == 1)
+					{
+						if(up_right % 8 == 7 || up_right < 0)
+						{
+							break;
+						}
+						if(boardArr[up_right] == -1)
+						{
+							legalMoves.push_back(up_right);
+						}
+					}	
+				}
+				//UP-LEFT
+				if(! ((up < 0) || (i % 8 == 0)) )
+				{
+					up_left -= 9;
+					while(boardArr[up_left] == 1)
+					{
+						if(up_left < 0 || up_left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[up_left] == -1)
+						{
+							legalMoves.push_back(up_left);
 						}
 					}
 				}
 			}
 		}
 	}
+	else if(turn % 2 == 0)
+	{
+		for(int i = 0;i < 64;i++)
+		{
+			// find white piece
+			if(boardArr[i] == 1)
+			{
+			// check for white pieces
+				int up = i - 8;
+				int left = i - 1;
+				int down = i + 8;
+				int right = i + 1;
+				
+				int down_right = i + 9;
+				int down_left = i + 7;
+				int up_right = i - 7;
+				int up_left = i - 9;
+				// if not on the top row
+				// UP
+				if(!(up < 0))
+				{
+					// check up if theres a white piece
+					while(boardArr[up] == 0)
+					{
+						// keeps going up until either hits the edge or finds an empty spot
+						up -= 8;
+						if(up < 0)
+						{
+							break;
+						}
+						if(boardArr[up] == -1)
+						{
+							// this is a legal move
+							legalMoves.push_back(up);
+						}
+					}
+				}
+				// if not on the left most column
+				// LEFT
+				if(!(i % 8 == 0))
+				{
+					while(boardArr[left] == 0)
+					{
+						left -= 1;
+						if(left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[left] == -1)
+						{
+							legalMoves.push_back(left);
+						}
+					}
+				}
+				//DOWN
+				if(!(i > 55))
+				{
+					while(boardArr[down] == 0)
+					{
+						down += 8;
+						if(down > 63)
+						{
+							break;
+						}
+						if(boardArr[down] == -1)
+						{
+							legalMoves.push_back(down);
+						}
+					}
+				}
+				//RIGHT
+				if(!(i % 8 == 7))
+				{
+					while(boardArr[right] == 0)
+					{
+						right += 1;
+						if(right % 8 == 7)
+						{
+							break;
+						}
+						if(boardArr[right] == -1)
+						{
+							legalMoves.push_back(right);
+						}
+					}
+				}
+				//DOWN-RIGHT
+				if(!( (i > 55) || (i % 8 == 7) ))
+				{
+					while(boardArr[down_right] == 0)
+					{
+						down_right += 9;
+						if(down_right > 55 || down_right % 8 == 7)
+						{
+							break;
+						}
+						if(boardArr[down_right] == -1)
+						{
+							legalMoves.push_back(down_right);
+						}
+					}
+				}
+				//DOWN-LEFT
+				if(! (i > 55) || (i % 8 == 0))
+				{
+					while(boardArr[down_left] == 0)
+					{
+						down_left += 7;
+						if(down_left > 55 || down_left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[down_left] == -1)
+						{
+							legalMoves.push_back(down_left);
+						}
+					}
+				}
+				//UP-RIGHT
+				if(! ((up < 0) || (i % 8 == 7)))
+				{
+					up_right -= 7;
+					while(boardArr[up_right] == 0)
+					{
+						if(up_right % 8 == 7 || up_right < 0)
+						{
+							break;
+						}
+						if(boardArr[up_right] == -1)
+						{
+							legalMoves.push_back(up_right);
+						}
+					}	
+				}
+				//UP-LEFT
+				if(! ((up < 0) || (i % 8 == 0)) )
+				{
+					up_left -= 9;
+					while(boardArr[up_left] == 0)
+					{
+						if(up_left < 0 || up_left % 8 == 0)
+						{
+							break;
+						}
+						if(boardArr[up_left] == -1)
+						{
+							legalMoves.push_back(up_left);
+						}
+					}
+				}
+			}
+		}
+	}
+	cout << "LEGAL MOVES" << endl;
 	for(auto j = legalMoves.begin(); j != legalMoves.end();++j)
 	{
 		cout << *j <<  " " << endl;

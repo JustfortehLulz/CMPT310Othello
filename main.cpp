@@ -16,12 +16,14 @@ int main(int argc, char const *argv[])
 
 	nice.play_move(19,nice.movenum);
 	
-	cout << nice.movenum << endl;
+	//cout << nice.movenum << endl;
 
 	cout << "Player 2 is white" << endl;
 	nice.play_move(18,nice.movenum);
 
-	cout << nice.movenum << endl;
+	//cout << nice.movenum << endl;
+
+	nice.check_legal_moves(nice.movenum);
 
 	nice.print_board();
 

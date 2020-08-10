@@ -2,7 +2,7 @@ class OthelloBoard
 {
 	public:
 		int boardArr[64];
-		int movenum = 0;
+		int movenum;
 
 		OthelloBoard();
 
