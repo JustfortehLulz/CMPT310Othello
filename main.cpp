@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include "othello.h"
 
 using namespace std;
@@ -15,32 +16,18 @@ int main(int argc, char const *argv[])
 	int black = 0;
 	int res = 0;
 
+	srand(time(NULL));
 	OthelloBoard nice;
 	cout << "-----------INTIAL BOARD-------------" << endl;
 	nice.print_board();
 	cout << "------------------------------------" << endl;
 
 
-	for(int i = 1; i <= 64 ; i++)
+	for(int i = 1; i <= 60 ; i++)
 	{
 		if(P1moves == false && P2moves == false)
 		{
 			cout << "No more legal moves for both players" << endl;
-			white = nice.white_score();
-			black = nice.black_score();
-			res = nice.check_victory(white,black);
-			if(res == 0)
-			{
-				cout << "Black Wins!" << endl;
-			}
-			else if(res == 1)
-			{
-				cout << "White Wins!" << endl;
-			}
-			else if(res == 2)
-			{
-				cout << "It's a Draw" << endl;
-			}
 			break;
 		}
 		else
@@ -106,6 +93,22 @@ int main(int argc, char const *argv[])
 		}
 
 	}
+	white = nice.white_score();
+	black = nice.black_score();
+	res = nice.check_victory(white,black);
+	if(res == 0)
+	{
+		cout << "Black Wins!" << endl;
+	}
+	else if(res == 1)
+	{
+		cout << "White Wins!" << endl;
+	}
+	else if(res == 2)
+	{
+		cout << "It's a Draw" << endl;
+	}
+
 
 	return 0;
 }

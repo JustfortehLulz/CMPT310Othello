@@ -693,10 +693,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}
-					cout << endl;
 				}
 			}
 		}
@@ -719,10 +717,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}				
-					cout << endl;
 				}
 			}
 		}
@@ -744,10 +740,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}
-					cout << endl;
 				}
 			}
 		}
@@ -769,10 +763,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}
-					cout << endl;
 				}
 			}
 		}
@@ -826,7 +818,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 		}
 
 		//UP-RIGHT
-		if(! ((tile-8 < 0) || (tile % 8 == 7)))
+		if(! ((tile-8 < 0) || (tile % 8 == 7)) )
 		{
 			while(boardArr[up_right] == 0)
 			{
@@ -842,10 +834,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}
-					cout << endl;
 				}
 			}	
 		}
@@ -866,10 +856,8 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
-						cout << *j << " ";
 						boardArr[*j] = 1;
 					}
-					cout << endl;
 				}
 			}
 		}
