@@ -2,7 +2,7 @@ class OthelloBoard
 {
 	public:
 		int boardArr[64];
-
+		int movenum = 0;
 
 		OthelloBoard();
 
@@ -10,8 +10,10 @@ class OthelloBoard
 	
 		void filp_tile();
 
-		void check_legal_moves();
+		void check_legal_moves(int turn);
 
-		void play_move();
+		void play_move(int tile, int turn);
+
+		void can_flip();
 
 };
