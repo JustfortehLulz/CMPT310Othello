@@ -12,20 +12,51 @@ int main(int argc, char const *argv[])
 	cout << "Black Move" << endl;
 	cout << "Player 1 is black" << endl;
 
-	nice.check_legal_moves(nice.movenum);
+	// cout << "BLACK LEGAL MOVES" << endl;
 
-	nice.play_move(19,nice.movenum);
+	// vector<int> moves = nice.check_legal_moves(nice.movenum);
+	// for(auto j = moves.begin(); j != moves.end();++j)
+	// {
+	// 	cout << *j <<  " " << endl;
+	// }
+	// cout << endl;
+
+	//nice.print_array();
+
+	nice.play_move(nice.movenum,19);
+	
+	cout << endl;
+
+
+	nice.print_board();
 	
 	//cout << nice.movenum << endl;
 
-	cout << "Player 2 is white" << endl;
-	nice.play_move(18,nice.movenum);
+	// cout << "WHITE LEGAL MOVES" << endl;
+	// vector<int> moves = nice.check_legal_moves(nice.movenum);
+	// for(auto j = moves.begin(); j != moves.end();++j)
+	// {
+	// 	cout << *j <<  " " << endl;
+	// }
+	// cout << endl;
+
+	// cout << "Player 2 is white" << endl;
+	nice.play_move(nice.movenum,18);
 
 	//cout << nice.movenum << endl;
 
-	nice.check_legal_moves(nice.movenum);
+	// cout << "BLACK LEGAL MOVES" << endl;
+	// vector<int> moves = nice.check_legal_moves(nice.movenum);
+	// for(auto j = moves.begin(); j != moves.end();++j)
+	// {
+	// 	cout << *j <<  " " << endl;
+	// }
+	// cout << endl;
+	cout << endl;
 
 	nice.print_board();
+
+	//nice.print_array();
 
 	return 0;
 }

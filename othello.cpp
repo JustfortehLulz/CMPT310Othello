@@ -53,7 +53,15 @@ void OthelloBoard::print_board()
 	}
 }
 
-void OthelloBoard::check_legal_moves(int turn)
+void OthelloBoard::print_array()
+{
+	for(int i = 0; i < 64; i++)
+	{
+		cout << boardArr[i] << endl;
+	}
+}
+
+vector<int> OthelloBoard::check_legal_moves(int turn)
 {
 	vector<int> legalMoves;
 	//black pieces turn
@@ -363,14 +371,15 @@ void OthelloBoard::check_legal_moves(int turn)
 			}
 		}
 	}
-	cout << "LEGAL MOVES" << endl;
-	for(auto j = legalMoves.begin(); j != legalMoves.end();++j)
-	{
-		cout << *j <<  " " << endl;
-	}
+	// for(auto j = legalMoves.begin(); j != legalMoves.end();++j)
+	// {
+	// 	cout << *j <<  " " << endl;
+	// }
+	return legalMoves;
+	//return the vector
 }
 
-void OthelloBoard::play_move(int tile, int turn)
+void OthelloBoard::play_move(int turn, int tile)
 {
 	if(boardArr[tile] == 1 || boardArr[tile] == 0)
 	{
@@ -383,12 +392,405 @@ void OthelloBoard::play_move(int tile, int turn)
 		if(turn % 2 == 1)
 		{
 			boardArr[tile] = 0;
+			flip_tile(turn,tile);
 		}
 		// Player 2 white
 		else if(turn % 2 == 0)
 		{
 			boardArr[tile] = 1;
+			flip_tile(turn,tile);
 		}
 		movenum++;
+	}
+}
+
+void OthelloBoard::flip_tile(int turn, int tile)
+{
+	vector<int> flipPieces;
+	// black pieces turn
+	if(turn % 2 == 1)
+	{
+		int up = tile - 8;
+		int left = tile - 1;
+		int down = tile + 8;
+		int right = tile + 1;
+				
+		int down_right = tile + 9;
+		int down_left = tile + 7;
+		int up_right = tile - 7;
+		int up_left = tile - 9;
+		if(!(up < 0))
+		{
+			// check up if theres a white piece
+			while(boardArr[up] == 1)
+			{
+				// keeps going up until either hits the edge or finds another black piece
+				flipPieces.push_back(up);
+				up -= 8;
+				if(up < 0 || boardArr[up] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//if not on the left most column
+		//LEFT
+		if(!(tile % 8 == 0))
+		{
+			while(boardArr[left] == 1)
+			{
+				flipPieces.push_back(left);
+				left -= 1;
+				if(left % 8 == 0 || boardArr[left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[left] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//DOWN
+		if(!(tile > 55))
+		{
+			while(boardArr[down] == 1)
+			{
+				flipPieces.push_back(down);
+				down += 8;
+				if(down > 63 || boardArr[down] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						cout << *j << endl;
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//RIGHT
+		if(!(tile % 8 == 7))
+		{
+			while(boardArr[right] == 1)
+			{
+				flipPieces.push_back(right);
+				right += 1;
+				if(right % 8 == 7 || boardArr[right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[right] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//DOWN-RIGHT
+		if(!( (tile > 55) || (tile % 8 == 7) ))
+		{
+			while(boardArr[down_right] == 1)
+			{
+				flipPieces.push_back(down_right);
+				down_right += 9;
+				if(down_right > 55 || down_right % 8 == 7 || boardArr[down_right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down_right] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//DOWN-LEFT
+		if(! (tile > 55) || (tile % 8 == 0))
+		{
+			while(boardArr[down_left] == 1)
+			{
+				flipPieces.push_back(down_left);
+				down_left += 7;
+				if(down_left > 55 || down_left % 8 == 0 || boardArr[down_left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down_left] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+		//UP-RIGHT
+		if(! ((up < 0) || (tile % 8 == 7)))
+		{
+			flipPieces.push_back(up_right);
+			up_right -= 7;
+			while(boardArr[up_right] == 1)
+			{
+				if(up_right % 8 == 7 || up_right < 0 || boardArr[up_right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up_right] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}	
+		}
+		//UP-LEFT
+		if(! ((up < 0) || (tile % 8 == 0)) )
+		{
+			flipPieces.push_back(up_left);
+			up_left -= 9;
+			while(boardArr[up_left] == 1)
+			{
+				if(up_left < 0 || up_left % 8 == 0 || boardArr[up_left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up_left] == 0)
+				{
+					// hit a black piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 0;
+					}
+				}
+			}
+		}
+	}
+	// white pieces turn
+	else if(turn % 2 == 0)
+	{
+
+		int up = tile - 8;
+		int left = tile - 1;
+		int down = tile + 8;
+		int right = tile + 1;
+		
+		int down_right = tile + 9;
+		int down_left = tile + 7;
+		int up_right = tile - 7;
+		int up_left = tile - 9;
+		// if not on the top row
+		// UP
+		if(!(up < 0))
+		{
+			// check up if theres a black piece
+			while(boardArr[up] == 0)
+			{
+				// keeps going up until either hits the edge or finds an empty spot
+				flipPieces.push_back(up);
+				up -= 8;
+				if(up < 0)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up] == 1 || boardArr[up] == -1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
+		// if not on the left most column
+		// LEFT
+		if(!(tile % 8 == 0))
+		{
+			while(boardArr[left] == 0)
+			{
+				flipPieces.push_back(left);
+				left -= 1;
+				if(left % 8 == 0 || boardArr[left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[left] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}					
+				}
+			}
+		}
+		//DOWN
+		if(!(tile > 55))
+		{
+			while(boardArr[down] == 0)
+			{
+				flipPieces.push_back(down);
+				down += 8;
+				if(down > 63  || boardArr[down] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
+		//RIGHT
+		if(!(tile % 8 == 7))
+		{
+			while(boardArr[right] == 0)
+			{
+				flipPieces.push_back(right);
+				right += 1;
+				if(right % 8 == 7 || boardArr[right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[right] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
+		//DOWN-RIGHT
+		if(!( (tile > 55) || (tile % 8 == 7) ))
+		{
+			while(boardArr[down_right] == 0)
+			{
+				flipPieces.push_back(down_right);
+				down_right += 9;
+				if(down_right > 55 || down_right % 8 == 7 || boardArr[down_right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down_right] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
+		//DOWN-LEFT
+		if(! (tile > 55) || (tile % 8 == 0))
+		{
+			while(boardArr[down_left] == 0)
+			{
+				flipPieces.push_back(down_left);
+				down_left += 7;
+				if(down_left > 55 || down_left % 8 == 0 || boardArr[down_left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[down_left] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
+		//UP-RIGHT
+		if(! ((up < 0) || (tile % 8 == 7)))
+		{
+			flipPieces.push_back(up_right);
+			up_right -= 7;
+			while(boardArr[up_right] == 0)
+			{
+				if(up_right % 8 == 7 || up_right < 0 || boardArr[up_right] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up_right] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}	
+		}
+		//UP-LEFT
+		if(! ((up < 0) || (tile % 8 == 0)) )
+		{
+			flipPieces.push_back(up_left);
+			up_left -= 9;
+			while(boardArr[up_left] == 0)
+			{
+				if(up_left < 0 || up_left % 8 == 0 || boardArr[up_left] == -1)
+				{
+					flipPieces.clear();
+					break;
+				}
+				if(boardArr[up_left] == 1)
+				{
+					// hit a white piece, time to flip over the white pieces
+					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
+					{
+						boardArr[*j] = 1;
+					}
+				}
+			}
+		}
 	}
 }

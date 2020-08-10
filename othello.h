@@ -1,3 +1,7 @@
+#include <vector>
+
+using namespace std;
+
 class OthelloBoard
 {
 	public:
@@ -8,12 +12,12 @@ class OthelloBoard
 
 		void print_board();
 	
-		void filp_tile();
+		void flip_tile(int turn, int tile);
 
-		void check_legal_moves(int turn);
+		vector<int> check_legal_moves(int turn);
 
-		void play_move(int tile, int turn);
+		void play_move(int turn, int tile);
 
-		void can_flip();
+		void print_array();
 
 };
