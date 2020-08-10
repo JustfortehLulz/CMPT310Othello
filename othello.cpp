@@ -852,3 +852,66 @@ void OthelloBoard::flip_tile(int turn, int tile)
 		}
 	}
 }
+
+void OthelloBoard::end_score()
+{
+	int white_score = 0;
+	int black_score = 0;
+	for(int i = 0;i<64;i++)
+	{
+		if(boardArr[i] == 0)
+		{
+			black_score++;
+		}
+		else if(boardArr[i] == 1)
+		{
+			white_score++;
+		}
+	}
+	cout << "White: " << white_score << " Black: " << black_score << endl;
+}
+
+int OthelloBoard::white_score()
+{
+	int white_score = 0;
+	for(int i = 0;i<64;i++)
+	{
+		if(boardArr[i] == 1)
+		{
+			white_score++;
+		}
+	}
+	return white_score;
+}
+
+int OthelloBoard::black_score()
+{
+	int black_score = 0;
+	for(int i = 0;i<64;i++)
+	{
+		if(boardArr[i] == 0)
+		{
+			black_score++;
+		}
+	}
+	return black_score;
+}
+
+// 0 = win for black
+// 1 = win for white
+// 2 = draw
+int OthelloBoard::check_victory(int white,int black)
+{
+	if(white > black)
+	{
+		return 1;
+	}
+	else if (white < black)
+	{
+		return 0;
+	}
+	else if(white == black)
+	{
+		return 2;
+	}
+}
