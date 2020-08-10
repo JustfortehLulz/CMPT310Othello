@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "othello.h"
 
 
@@ -98,7 +99,11 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						if(boardArr[up] == -1)
 						{
 							// this is a legal move
-							legalMoves.push_back(up);
+							if(find(legalMoves.begin(),legalMoves.end(),up) == legalMoves.end())
+							{
+								legalMoves.push_back(up);
+							}
+							
 						}
 					}
 				}
@@ -115,13 +120,18 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[left] == -1)
 						{
-							legalMoves.push_back(left);
+							if(find(legalMoves.begin(),legalMoves.end(),left) == legalMoves.end())
+							{
+								legalMoves.push_back(left);
+							}
+							
 						}
 					}
 				}
 				//DOWN
 				if(!(i > 55))
 				{
+					// keeps going until there is an empty spot or until the edge
 					while(boardArr[down] == 1)
 					{
 						down += 8;
@@ -131,7 +141,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down] == -1)
 						{
-							legalMoves.push_back(down);
+							if(find(legalMoves.begin(),legalMoves.end(),down) == legalMoves.end())
+							{
+								legalMoves.push_back(down);
+							}
 						}
 					}
 				}
@@ -147,7 +160,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[right] == -1)
 						{
-							legalMoves.push_back(right);
+							if(find(legalMoves.begin(),legalMoves.end(),right) == legalMoves.end())
+							{
+								legalMoves.push_back(right);
+							}
 						}
 					}
 				}
@@ -163,7 +179,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down_right] == -1)
 						{
-							legalMoves.push_back(down_right);
+							if(find(legalMoves.begin(),legalMoves.end(),down_right) == legalMoves.end())
+							{
+								legalMoves.push_back(down_right);
+							}
 						}
 					}
 				}
@@ -179,39 +198,48 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down_left] == -1)
 						{
-							legalMoves.push_back(down_left);
+							if(find(legalMoves.begin(),legalMoves.end(),down_left) == legalMoves.end())
+							{
+								legalMoves.push_back(down_left);
+							}
 						}
 					}
 				}
 				//UP-RIGHT
 				if(! ((up < 0) || (i % 8 == 7)))
 				{
-					up_right -= 7;
 					while(boardArr[up_right] == 1)
 					{
+						up_right -= 7;
 						if(up_right % 8 == 7 || up_right < 0)
 						{
 							break;
 						}
 						if(boardArr[up_right] == -1)
 						{
-							legalMoves.push_back(up_right);
+							if(find(legalMoves.begin(),legalMoves.end(),up_right) == legalMoves.end())
+							{
+								legalMoves.push_back(up_right);
+							}
 						}
 					}	
 				}
 				//UP-LEFT
 				if(! ((up < 0) || (i % 8 == 0)) )
 				{
-					up_left -= 9;
 					while(boardArr[up_left] == 1)
 					{
+						up_left -= 9;
 						if(up_left < 0 || up_left % 8 == 0)
 						{
 							break;
 						}
 						if(boardArr[up_left] == -1)
 						{
-							legalMoves.push_back(up_left);
+							if(find(legalMoves.begin(),legalMoves.end(),up_left) == legalMoves.end())
+							{
+								legalMoves.push_back(up_left);
+							}
 						}
 					}
 				}
@@ -251,7 +279,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						if(boardArr[up] == -1)
 						{
 							// this is a legal move
-							legalMoves.push_back(up);
+							if(find(legalMoves.begin(),legalMoves.end(),up) == legalMoves.end())
+							{
+								legalMoves.push_back(up);
+							}
 						}
 					}
 				}
@@ -268,7 +299,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[left] == -1)
 						{
-							legalMoves.push_back(left);
+							if(find(legalMoves.begin(),legalMoves.end(),left) == legalMoves.end())
+							{
+								legalMoves.push_back(left);
+							}
 						}
 					}
 				}
@@ -284,7 +318,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down] == -1)
 						{
-							legalMoves.push_back(down);
+							if(find(legalMoves.begin(),legalMoves.end(),down) == legalMoves.end())
+							{
+								legalMoves.push_back(down);
+							}
 						}
 					}
 				}
@@ -300,7 +337,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[right] == -1)
 						{
-							legalMoves.push_back(right);
+							if(find(legalMoves.begin(),legalMoves.end(),right) == legalMoves.end())
+							{
+								legalMoves.push_back(right);
+							}
 						}
 					}
 				}
@@ -316,7 +356,10 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down_right] == -1)
 						{
-							legalMoves.push_back(down_right);
+							if(find(legalMoves.begin(),legalMoves.end(),down_right) == legalMoves.end())
+							{
+								legalMoves.push_back(down_right);
+							}
 						}
 					}
 				}
@@ -332,39 +375,48 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 						}
 						if(boardArr[down_left] == -1)
 						{
-							legalMoves.push_back(down_left);
+							if(find(legalMoves.begin(),legalMoves.end(),down_left) == legalMoves.end())
+							{
+								legalMoves.push_back(down_left);
+							}
 						}
 					}
 				}
 				//UP-RIGHT
 				if(! ((up < 0) || (i % 8 == 7)))
 				{
-					up_right -= 7;
 					while(boardArr[up_right] == 0)
 					{
+						up_right -= 7;
 						if(up_right % 8 == 7 || up_right < 0)
 						{
 							break;
 						}
 						if(boardArr[up_right] == -1)
 						{
-							legalMoves.push_back(up_right);
+							if(find(legalMoves.begin(),legalMoves.end(),up_right) == legalMoves.end())
+							{
+								legalMoves.push_back(up_right);
+							}
 						}
 					}	
 				}
 				//UP-LEFT
 				if(! ((up < 0) || (i % 8 == 0)) )
 				{
-					up_left -= 9;
 					while(boardArr[up_left] == 0)
 					{
+						up_left -= 9;
 						if(up_left < 0 || up_left % 8 == 0)
 						{
 							break;
 						}
 						if(boardArr[up_left] == -1)
 						{
-							legalMoves.push_back(up_left);
+							if(find(legalMoves.begin(),legalMoves.end(),up_left) == legalMoves.end())
+							{
+								legalMoves.push_back(up_left);
+							}
 						}
 					}
 				}
@@ -557,10 +609,10 @@ void OthelloBoard::flip_tile(int turn, int tile)
 		//UP-RIGHT
 		if(! ((up < 0) || (tile % 8 == 7)))
 		{
-			flipPieces.push_back(up_right);
-			up_right -= 7;
 			while(boardArr[up_right] == 1)
 			{
+			flipPieces.push_back(up_right);
+			up_right -= 7;
 				if(up_right % 8 == 7 || up_right < 0 || boardArr[up_right] == -1)
 				{
 					flipPieces.clear();
@@ -579,10 +631,10 @@ void OthelloBoard::flip_tile(int turn, int tile)
 		//UP-LEFT
 		if(! ((up < 0) || (tile % 8 == 0)) )
 		{
-			flipPieces.push_back(up_left);
-			up_left -= 9;
 			while(boardArr[up_left] == 1)
 			{
+			flipPieces.push_back(up_left);
+			up_left -= 9;
 				if(up_left < 0 || up_left % 8 == 0 || boardArr[up_left] == -1)
 				{
 					flipPieces.clear();
@@ -622,12 +674,12 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				// keeps going up until either hits the edge or finds an empty spot
 				flipPieces.push_back(up);
 				up -= 8;
-				if(up < 0)
+				if(up < 0 || boardArr[up] == -1)
 				{
 					flipPieces.clear();
 					break;
 				}
-				if(boardArr[up] == 1 || boardArr[up] == -1)
+				if(boardArr[up] == 1)
 				{
 					// hit a white piece, time to flip over the white pieces
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
@@ -637,6 +689,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				}
 			}
 		}
+
 		// if not on the left most column
 		// LEFT
 		if(!(tile % 8 == 0))
@@ -656,10 +709,11 @@ void OthelloBoard::flip_tile(int turn, int tile)
 					for(auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
 					{
 						boardArr[*j] = 1;
-					}					
+					}				
 				}
 			}
 		}
+
 		//DOWN
 		if(!(tile > 55))
 		{
@@ -682,6 +736,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				}
 			}
 		}
+
 		//RIGHT
 		if(!(tile % 8 == 7))
 		{
@@ -704,6 +759,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				}
 			}
 		}
+
 		//DOWN-RIGHT
 		if(!( (tile > 55) || (tile % 8 == 7) ))
 		{
@@ -726,6 +782,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				}
 			}
 		}
+
 		//DOWN-LEFT
 		if(! (tile > 55) || (tile % 8 == 0))
 		{
@@ -748,13 +805,14 @@ void OthelloBoard::flip_tile(int turn, int tile)
 				}
 			}
 		}
+
 		//UP-RIGHT
 		if(! ((up < 0) || (tile % 8 == 7)))
 		{
-			flipPieces.push_back(up_right);
-			up_right -= 7;
 			while(boardArr[up_right] == 0)
 			{
+				flipPieces.push_back(up_right);
+				up_right -= 7;
 				if(up_right % 8 == 7 || up_right < 0 || boardArr[up_right] == -1)
 				{
 					flipPieces.clear();
@@ -773,10 +831,10 @@ void OthelloBoard::flip_tile(int turn, int tile)
 		//UP-LEFT
 		if(! ((up < 0) || (tile % 8 == 0)) )
 		{
-			flipPieces.push_back(up_left);
-			up_left -= 9;
 			while(boardArr[up_left] == 0)
 			{
+				flipPieces.push_back(up_left);
+				up_left -= 9;
 				if(up_left < 0 || up_left % 8 == 0 || boardArr[up_left] == -1)
 				{
 					flipPieces.clear();
