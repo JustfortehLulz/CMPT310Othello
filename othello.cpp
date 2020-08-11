@@ -9,6 +9,9 @@
 #define RED "\033[31m"
 #define BLUE "\033[34m"
 #define YELLOW "\033[33m"
+#define BLACK 0
+#define WHITE 1
+#define EMPTY -1
 
 using namespace std;
 
@@ -16,12 +19,12 @@ OthelloBoard::OthelloBoard()
 {
     for (int i = 0;i<64;i++)
     {
-        boardArr[i] = -1;
+        boardArr[i] = EMPTY;
     }
-    boardArr[27] = 1;
-    boardArr[28] = 0;
-    boardArr[35] = 0;
-    boardArr[36] = 1;
+    boardArr[27] = WHITE;
+    boardArr[28] = BLACK;
+    boardArr[35] = BLACK;
+    boardArr[36] = WHITE;
     movenum = 1;
     return;
 }
@@ -30,15 +33,15 @@ void OthelloBoard::print_board()
 {
     for (int i = 0;i < 64;i++)
     {
-        if (boardArr[i] == 1)
+        if (boardArr[i] == WHITE)
         {
             cout << "|" << RED << "W " << RESET << "|";
         }
-        else if (boardArr[i] == 0)
+        else if (boardArr[i] == BLACK)
         {
             cout << "|" << BLUE << "B " << RESET << "|";
         }
-        else if (boardArr[i] == -1)
+        else if (boardArr[i] == EMPTY)
         {
             if (i < 10)
             {
@@ -80,7 +83,7 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
         for (int i = 0;i < 64;i++)
         {
             // find black piece
-            if (boardArr[i] == 0)
+            if (boardArr[i] == BLACK)
             {
                 // check for white pieces
                 int up = i - 8;
@@ -98,13 +101,13 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 }
                 else {
                     // check up if theres a white piece
-                    while (boardArr[up] == 1) {
+                    while (boardArr[up] == WHITE) {
                         // keeps going up until either hits the edge or finds an empty spot
                         up -= 8;
                         if (up < 0) {
                             break;
                         }
-                        if (boardArr[up] == -1) {
+                        if (boardArr[up] == EMPTY) {
                             // this is a legal move
                             if (find(legalMoves.begin(), legalMoves.end(), up) == legalMoves.end()) {
                                 legalMoves.push_back(up);
@@ -117,12 +120,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 if (i % 8 == 0) {
                 }
                 else {
-                    while (boardArr[left] == 1) {
+                    while (boardArr[left] == WHITE) {
                         left -= 1;
                         if (left % 8 == 7) {
                             break;
                         }
-                        if (boardArr[left] == -1) {
+                        if (boardArr[left] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), left) == legalMoves.end()) {
                                 legalMoves.push_back(left);
                             }
@@ -135,12 +138,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 }
                 else {
                     // keeps going until there is an empty spot or until the edge
-                    while (boardArr[down] == 1) {
+                    while (boardArr[down] == WHITE) {
                         down += 8;
                         if (down > 63) {
                             break;
                         }
-                        if (boardArr[down] == -1) {
+                        if (boardArr[down] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), down) == legalMoves.end()) {
                                 legalMoves.push_back(down);
                             }
@@ -151,12 +154,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 if (i % 8 == 7) {
                 }
                 else {
-                    while (boardArr[right] == 1) {
+                    while (boardArr[right] == WHITE) {
                         right += 1;
                         if (right % 8 == 0) {
                             break;
                         }
-                        if (boardArr[right] == -1) {
+                        if (boardArr[right] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), right) == legalMoves.end()) {
                                 legalMoves.push_back(right);
                             }
@@ -166,14 +169,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //DOWN-RIGHT
                 if (!((i >= 55) || (i % 8 == 7)))
                 {
-                    while (boardArr[down_right] == 1)
+                    while (boardArr[down_right] == WHITE)
                     {
                         down_right += 9;
                         if (down_right > 63 || down_right % 8 == 0)
                         {
                             break;
                         }
-                        if (boardArr[down_right] == -1)
+                        if (boardArr[down_right] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), down_right) == legalMoves.end())
                             {
@@ -184,12 +187,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 }
                 //DOWN-LEFT
                 if (i < 55 || i % 8 == 0) {
-                    while (boardArr[down_left] == 1) {
+                    while (boardArr[down_left] == WHITE) {
                         down_left += 7;
                         if (down_left > 63 || down_left % 8 == 7) {
                             break;
                         }
-                        if (boardArr[down_left] == -1) {
+                        if (boardArr[down_left] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), down_left) == legalMoves.end()) {
                                 legalMoves.push_back(down_left);
                             }
@@ -201,14 +204,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //UP-RIGHT
                 if (!((i-8 < 0) || (i % 8 == 7)))
                 {
-                    while (boardArr[up_right] == 1)
+                    while (boardArr[up_right] == WHITE)
                     {
                         up_right -= 7;
                         if (up_right % 8 == 0 || up_right < 0)
                         {
                             break;
                         }
-                        if (boardArr[up_right] == -1)
+                        if (boardArr[up_right] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), up_right) == legalMoves.end())
                             {
@@ -220,14 +223,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //UP-LEFT
                 if (!((i-8 < 0) || (i % 8 == 0)))
                 {
-                    while (boardArr[up_left] == 1)
+                    while (boardArr[up_left] == WHITE)
                     {
                         up_left -= 9;
                         if (up_left < 0 || up_left % 8 == 7)
                         {
                             break;
                         }
-                        if (boardArr[up_left] == -1)
+                        if (boardArr[up_left] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), up_left) == legalMoves.end())
                             {
@@ -244,7 +247,7 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
         for (int i = 0;i < 64;i++)
         {
             // find white piece
-            if (boardArr[i] == 1)
+            if (boardArr[i] == WHITE)
             {
                 // check for white pieces
                 int up = i - 8;
@@ -262,13 +265,13 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 }
                 else {
                     // check up if theres a white piece
-                    while (boardArr[up] == 0) {
+                    while (boardArr[up] == BLACK) {
                         // keeps going up until either hits the edge or finds an empty spot
                         up -= 8;
                         if (up < 0) {
                             break;
                         }
-                        if (boardArr[up] == -1) {
+                        if (boardArr[up] == EMPTY) {
                             // this is a legal move
                             if (find(legalMoves.begin(), legalMoves.end(), up) == legalMoves.end()) {
                                 legalMoves.push_back(up);
@@ -281,12 +284,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 if (i % 8 == 0) {
                 }
                 else {
-                    while (boardArr[left] == 0) {
+                    while (boardArr[left] == BLACK) {
                         left -= 1;
                         if (left % 8 == 7) {
                             break;
                         }
-                        if (boardArr[left] == -1) {
+                        if (boardArr[left] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), left) == legalMoves.end()) {
                                 legalMoves.push_back(left);
                             }
@@ -297,12 +300,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 if (i >= 55) {
                 }
                 else {
-                    while (boardArr[down] == 0) {
+                    while (boardArr[down] == BLACK) {
                         down += 8;
                         if (down > 63) {
                             break;
                         }
-                        if (boardArr[down] == -1) {
+                        if (boardArr[down] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), down) == legalMoves.end()) {
                                 legalMoves.push_back(down);
                             }
@@ -313,12 +316,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 if (i % 8 == 7) {
                 }
                 else {
-                    while (boardArr[right] == 0) {
+                    while (boardArr[right] == BLACK) {
                         right += 1;
                         if (right % 8 == 0) {
                             break;
                         }
-                        if (boardArr[right] == -1) {
+                        if (boardArr[right] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), right) == legalMoves.end()) {
                                 legalMoves.push_back(right);
                             }
@@ -328,14 +331,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //DOWN-RIGHT
                 if (!((i >= 55) || (i % 8 == 7)))
                 {
-                    while (boardArr[down_right] == 0)
+                    while (boardArr[down_right] == BLACK)
                     {
                         down_right += 9;
                         if (down_right > 63 || down_right % 8 == 0)
                         {
                             break;
                         }
-                        if (boardArr[down_right] == -1)
+                        if (boardArr[down_right] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), down_right) == legalMoves.end())
                             {
@@ -346,12 +349,12 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 }
                 //DOWN-LEFT
                 if (i < 55 || i % 8 == 0) {
-                    while (boardArr[down_left] == 0) {
+                    while (boardArr[down_left] == BLACK) {
                         down_left += 7;
                         if (down_left > 63 || down_left % 8 == 7) {
                             break;
                         }
-                        if (boardArr[down_left] == -1) {
+                        if (boardArr[down_left] == EMPTY) {
                             if (find(legalMoves.begin(), legalMoves.end(), down_left) == legalMoves.end()) {
                                 legalMoves.push_back(down_left);
                             }
@@ -363,14 +366,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //UP-RIGHT
                 if (!((i-8 < 0) || (i % 8 == 7)))
                 {
-                    while (boardArr[up_right] == 0)
+                    while (boardArr[up_right] == BLACK)
                     {
                         up_right -= 7;
                         if (up_right % 8 == 0 || up_right < 0)
                         {
                             break;
                         }
-                        if (boardArr[up_right] == -1)
+                        if (boardArr[up_right] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), up_right) == legalMoves.end())
                             {
@@ -382,14 +385,14 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
                 //UP-LEFT
                 if (!((i-8 < 0) || (i % 8 == 0)))
                 {
-                    while (boardArr[up_left] == 0)
+                    while (boardArr[up_left] == BLACK)
                     {
                         up_left -= 9;
                         if (up_left < 0 || up_left % 8 == 7)
                         {
                             break;
                         }
-                        if (boardArr[up_left] == -1)
+                        if (boardArr[up_left] == EMPTY)
                         {
                             if (find(legalMoves.begin(), legalMoves.end(), up_left) == legalMoves.end())
                             {
@@ -412,7 +415,7 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 // put in legal moves ///////////////////////////////////////////////////////
 void OthelloBoard::play_move(int turn, int tile)
 {
-    if (boardArr[tile] == 1 || boardArr[tile] == 0)
+    if (boardArr[tile] != EMPTY)
     {
         cout << "Invalid Move" << endl;
         return;
@@ -422,13 +425,13 @@ void OthelloBoard::play_move(int turn, int tile)
         // Player 1 black
         if (turn % 2 == 1)
         {
-            boardArr[tile] = 0;
+            boardArr[tile] = BLACK;
             flip_tile(turn, tile);
         }
         // Player 2 white
         else if (turn % 2 == 0)
         {
-            boardArr[tile] = 1;
+            boardArr[tile] = WHITE;
             flip_tile(turn, tile);
         }
         movenum++;
@@ -454,18 +457,18 @@ void OthelloBoard::flip_tile(int turn, int tile)
         }
         else {
             // check up if theres a white piece
-            while (boardArr[up] == 1) {
+            while (boardArr[up] == WHITE) {
                 // keeps going up until either hits the edge or finds another black piece
                 flipPieces.push_back(up);
                 up -= 8;
-                if (up < 0 || boardArr[up] == -1) {
+                if (up < 0 || boardArr[up] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up] == 0) {
+                if (boardArr[up] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -475,17 +478,17 @@ void OthelloBoard::flip_tile(int turn, int tile)
         if (tile % 8 == 0) {
         }
         else {
-            while (boardArr[left] == 1) {
+            while (boardArr[left] == WHITE) {
                 flipPieces.push_back(left);
                 left -= 1;
-                if (left % 8 == 7 || boardArr[left] == -1) {
+                if (left % 8 == 7 || boardArr[left] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[left] == 0) {
+                if (boardArr[left] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -494,18 +497,18 @@ void OthelloBoard::flip_tile(int turn, int tile)
         if (tile > 55) {
         }
         else {
-            while (boardArr[down] == 1) {
+            while (boardArr[down] == WHITE) {
                 flipPieces.push_back(down);
                 down += 8;
-                if (down > 63 || boardArr[down] == -1) {
+                if (down > 63 || boardArr[down] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down] == 0) {
+                if (boardArr[down] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
                         cout << *j << endl;
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -514,17 +517,17 @@ void OthelloBoard::flip_tile(int turn, int tile)
         if (tile % 8 == 7) {
         }
         else {
-            while (boardArr[right] == 1) {
+            while (boardArr[right] == WHITE) {
                 flipPieces.push_back(right);
                 right += 1;
-                if (right % 8 == 0 || boardArr[right] == -1) {
+                if (right % 8 == 0 || boardArr[right] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[right] == 0) {
+                if (boardArr[right] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -532,38 +535,38 @@ void OthelloBoard::flip_tile(int turn, int tile)
         //DOWN-RIGHT
         if (!((tile > 55) || (tile % 8 == 7)))
         {
-            while (boardArr[down_right] == 1)
+            while (boardArr[down_right] == WHITE)
             {
                 flipPieces.push_back(down_right);
                 down_right += 9;
-                if (down_right > 63 || down_right % 8 == 0 || boardArr[down_right] == -1)
+                if (down_right > 63 || down_right % 8 == 0 || boardArr[down_right] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down_right] == 0)
+                if (boardArr[down_right] == BLACK)
                 {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
         }
         //DOWN-LEFT
         if (tile <= 55 || tile % 8 == 0) {
-            while (boardArr[down_left] == 1) {
+            while (boardArr[down_left] == WHITE) {
                 flipPieces.push_back(down_left);
                 down_left += 7;
-                if (down_left > 63 || down_left % 8 == 7 || boardArr[down_left] == -1) {
+                if (down_left > 63 || down_left % 8 == 7 || boardArr[down_left] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down_left] == 0) {
+                if (boardArr[down_left] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -573,21 +576,21 @@ void OthelloBoard::flip_tile(int turn, int tile)
         //UP-RIGHT
         if (!((tile-8 < 0) || (tile % 8 == 7)))
         {
-            while (boardArr[up_right] == 1)
+            while (boardArr[up_right] == WHITE)
             {
                 flipPieces.push_back(up_right);
                 up_right -= 7;
-                if (up_right % 8 == 0 || up_right < 0 || boardArr[up_right] == -1)
+                if (up_right % 8 == 0 || up_right < 0 || boardArr[up_right] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up_right] == 0)
+                if (boardArr[up_right] == BLACK)
                 {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -595,21 +598,21 @@ void OthelloBoard::flip_tile(int turn, int tile)
         //UP-LEFT
         if (!((tile-8 < 0) || (tile % 8 == 0)))
         {
-            while (boardArr[up_left] == 1)
+            while (boardArr[up_left] == WHITE)
             {
                 flipPieces.push_back(up_left);
                 up_left -= 9;
-                if (up_left < 0 || up_left % 8 == 7 || boardArr[up_left] == -1)
+                if (up_left < 0 || up_left % 8 == 7 || boardArr[up_left] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up_left] == 0)
+                if (boardArr[up_left] == BLACK)
                 {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 0;
+                        boardArr[*j] = BLACK;
                     }
                 }
             }
@@ -634,18 +637,18 @@ void OthelloBoard::flip_tile(int turn, int tile)
         }
         else {
             // check up if theres a black piece
-            while (boardArr[up] == 0) {
+            while (boardArr[up] == BLACK) {
                 // keeps going up until either hits the edge or finds an empty spot
                 flipPieces.push_back(up);
                 up -= 8;
-                if (up < 0 || boardArr[up] == -1) {
+                if (up < 0 || boardArr[up] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up] == 1) {
+                if (boardArr[up] == WHITE) {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -659,14 +662,14 @@ void OthelloBoard::flip_tile(int turn, int tile)
             while (boardArr[left] == 0) {
                 flipPieces.push_back(left);
                 left -= 1;
-                if (left % 8 == 7 || boardArr[left] == -1) {
+                if (left % 8 == 7 || boardArr[left] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[left] == 1) {
+                if (boardArr[left] == WHITE) {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -675,17 +678,17 @@ void OthelloBoard::flip_tile(int turn, int tile)
         if (tile > 55) {
         }
         else {
-            while (boardArr[down] == 0) {
+            while (boardArr[down] == BLACK) {
                 flipPieces.push_back(down);
                 down += 8;
-                if (down > 63 || boardArr[down] == -1) {
+                if (down > 63 || boardArr[down] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down] == 1) {
+                if (boardArr[down] == WHITE) {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -694,17 +697,17 @@ void OthelloBoard::flip_tile(int turn, int tile)
         if (tile % 8 == 7) {
         }
         else {
-            while (boardArr[right] == 0) {
+            while (boardArr[right] == BLACK) {
                 flipPieces.push_back(right);
                 right += 1;
-                if (right % 8 == 0 || boardArr[right] == -1) {
+                if (right % 8 == 0 || boardArr[right] == EMPTY) {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[right] == 1) {
+                if (boardArr[right] == WHITE) {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -712,21 +715,21 @@ void OthelloBoard::flip_tile(int turn, int tile)
         //DOWN-RIGHT
         if (!((tile > 55) || (tile % 8 == 7)))
         {
-            while (boardArr[down_right] == 0)
+            while (boardArr[down_right] == BLACK)
             {
                 flipPieces.push_back(down_right);
                 down_right += 9;
-                if (down_right > 63 || down_right % 8 == 0 || boardArr[down_right] == -1)
+                if (down_right > 63 || down_right % 8 == 0 || boardArr[down_right] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down_right] == 1)
+                if (boardArr[down_right] == WHITE)
                 {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -740,7 +743,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
                 flipPieces.push_back(down_left);
 
                 down_left += 7;
-                if (down_left > 63 || down_left % 8 == 7 || boardArr[down_left] == -1)
+                if (down_left > 63 || down_left % 8 == 7 || boardArr[down_left] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
@@ -762,7 +765,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
             {
                 flipPieces.push_back(up_right);
                 up_right -= 7;
-                if (up_right % 8 == 0 || up_right < 0 || boardArr[up_right] == -1)
+                if (up_right % 8 == 0 || up_right < 0 || boardArr[up_right] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
@@ -780,21 +783,21 @@ void OthelloBoard::flip_tile(int turn, int tile)
         //UP-LEFT
         if (!((tile-8 < 0) || (tile % 8 == 0)))
         {
-            while (boardArr[up_left] == 0)
+            while (boardArr[up_left] == BLACK)
             {
                 flipPieces.push_back(up_left);
                 up_left -= 9;
-                if (up_left < 0 || up_left % 8 == 7 || boardArr[up_left] == -1)
+                if (up_left < 0 || up_left % 8 == 7 || boardArr[up_left] == EMPTY)
                 {
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up_left] == 1)
+                if (boardArr[up_left] == WHITE)
                 {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -802,30 +805,14 @@ void OthelloBoard::flip_tile(int turn, int tile)
     }
 }
 
-void OthelloBoard::end_score()
-{
-    int white_score = 0;
-    int black_score = 0;
-    for (int i = 0;i<64;i++)
-    {
-        if (boardArr[i] == 0)
-        {
-            black_score++;
-        }
-        else if (boardArr[i] == 1)
-        {
-            white_score++;
-        }
-    }
-    cout << "White: " << white_score << " Black: " << black_score << endl;
-}
+
 
 int OthelloBoard::white_score()
 {
     int white_score = 0;
     for (int i = 0;i<64;i++)
     {
-        if (boardArr[i] == 1)
+        if (boardArr[i] == WHITE)
         {
             white_score++;
         }
@@ -838,12 +825,20 @@ int OthelloBoard::black_score()
     int black_score = 0;
     for (int i = 0;i<64;i++)
     {
-        if (boardArr[i] == 0)
+        if (boardArr[i] == BLACK)
         {
             black_score++;
         }
     }
     return black_score;
+}
+
+void OthelloBoard::end_score()
+{
+    int white_score = this->white_score();
+    int black_score = this->black_score();
+
+    cout << "White: " << white_score << " Black: " << black_score << endl;
 }
 
 string OthelloBoard::calculate_winner()
