@@ -846,17 +846,20 @@ int OthelloBoard::black_score()
     return black_score;
 }
 
-string OthelloBoard::calculate_winner(int white, int black)
+string OthelloBoard::calculate_winner()
 {
-    if (white > black)
+    int white_score = this->white_score();
+    int black_score = this->black_score();
+
+    if (white_score > black_score)
     {
         return "white";
     }
-    else if (white < black)
+    else if (white_score < black_score)
     {
         return "black";
     }
-    else if (white == black)
+    else if (white_score == black_score)
     {
         return "draw";
     }

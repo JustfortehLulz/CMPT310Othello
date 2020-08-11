@@ -93,7 +93,8 @@ int main(int argc, char const *argv[])
 
     }
 
-    string winner = Board.calculate_winner(Board.white_score(), Board.black_score());
+    string winner = Board.calculate_winner();
+
     if (winner == "black")
     {
         cout << "Black Wins!" << endl;

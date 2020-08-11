@@ -28,6 +28,6 @@ public:
 
 	int black_score();
 
-	string calculate_winner(int white, int black);
+	string calculate_winner();
 
 };
