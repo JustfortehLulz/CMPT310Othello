@@ -29,6 +29,15 @@ OthelloBoard::OthelloBoard()
     return;
 }
 
+string OthelloBoard::get_turn() {
+    if (this->movenum % 2 == 1) {
+        return "black";
+    }
+    else {
+        return "white";
+    }
+}
+
 void OthelloBoard::print_board()
 {
     for (int i = 0;i < 64;i++)
@@ -78,7 +87,7 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
 {
     vector<int> legalMoves;
     //black pieces turn
-    if (turn % 2 == 1)
+    if (this->get_turn() == "black")
     {
         for (int i = 0;i < 64;i++)
         {
@@ -242,7 +251,7 @@ vector<int> OthelloBoard::check_legal_moves(int turn)
             }
         }
     }
-    else if (turn % 2 == 0)
+    else if (this->get_turn() == "white")
     {
         for (int i = 0;i < 64;i++)
         {
@@ -423,13 +432,13 @@ void OthelloBoard::play_move(int turn, int tile)
     else
     {
         // Player 1 black
-        if (turn % 2 == 1)
+        if (this->get_turn() == "black")
         {
             boardArr[tile] = BLACK;
             flip_tile(turn, tile);
         }
         // Player 2 white
-        else if (turn % 2 == 0)
+        else if (this->get_turn() == "white")
         {
             boardArr[tile] = WHITE;
             flip_tile(turn, tile);
@@ -442,7 +451,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
 {
     vector<int> flipPieces;
     // black pieces turn
-    if (turn % 2 == 1)
+    if (this->get_turn() == "black")
     {
         int up = tile - 8;
         int left = tile - 1;
@@ -619,7 +628,7 @@ void OthelloBoard::flip_tile(int turn, int tile)
         }
     }
     // white pieces turn
-    else if (turn % 2 == 0)
+    else if (this->get_turn() == "white")
     {
 
         int up = tile - 8;

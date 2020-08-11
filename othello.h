@@ -12,6 +12,8 @@ public:
 
 	void print_board();
 
+	string get_turn();
+
 	void flip_tile(int turn, int tile);
 
 	vector<int> check_legal_moves(int turn);
