@@ -22,6 +22,6 @@ int Node::updateNumVisits() {
     NumVisits++;
 }
 int Node::updateEval(int value) {
-    NumVisits += Value;
+    NumVisits += value;
     return NumVisits;
 }
