@@ -12,11 +12,13 @@ public:
 
 	void print_board();
 
-	void flip_tile(int turn, int tile);
+	string get_turn();
 
-	vector<int> check_legal_moves(int turn);
+	void flip_tile(int tile);
 
-	void play_move(int turn, int tile);
+	vector<int> check_legal_moves();
+
+	void play_move(int tile);
 
 	void print_array();
 
@@ -28,6 +30,6 @@ public:
 
 	int black_score();
 
-	string calculate_winner(int white, int black);
+	string calculate_winner();
 
 };
