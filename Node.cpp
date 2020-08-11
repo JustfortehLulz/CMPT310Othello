@@ -18,10 +18,9 @@ int Node::getEval(){
 int Node::getNumVisits(){
     return NumVisits;
 }
-int Node::updateNumVisits() {
-    NumVisits++;
+void Node::updateEval(int value) {
+    Eval += value;
 }
-int Node::updateEval(int value) {
-    NumVisits += value;
-    return NumVisits;
+void Node::incrementNumVisits() {
+    NumVisits++;
 }

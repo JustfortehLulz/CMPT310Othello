@@ -16,7 +16,7 @@ public:
     void PrintNode();
     int getEval();
     int getNumVisits();
-    int updateEval(int value);
-    int updateNumVisits();
+    void updateEval(int value);
+    void incrementNumVisits();
 };
 
