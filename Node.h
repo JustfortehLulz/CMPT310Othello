@@ -3,10 +3,13 @@
 
 
 class Node {
+private:
     OthelloBoard BoardState;
 public:
+
     //initialization.
-    Node(OthelloBoard ParentState, int index);
+    Node(OthelloBoard ParentState);
+    void PlayMove(int index);
 
     void PrintNode();
 };
