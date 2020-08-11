@@ -8,12 +8,6 @@ class OthelloBoard
 		int boardArr[64];
 		int movenum;
 
-		// struct score
-		// {
-		// 	int white_score;
-		// 	int black_score;
-		// };
-
 		OthelloBoard();
 
 		void print_board();
