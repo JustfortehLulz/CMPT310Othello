@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "othello.h"
+#include "MCTS.h"
 #include <algorithm>
 
 
