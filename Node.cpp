@@ -12,3 +12,16 @@ void Node::PlayMove(int index) {
 void Node::PrintNode() {
     BoardState.print_board();
 }
+int Node::getEval(){
+    return Eval;
+}
+int Node::getNumVisits(){
+    return NumVisits;
+}
+int Node::updateNumVisits() {
+    NumVisits++;
+}
+int Node::updateEval(int value) {
+    NumVisits += Value;
+    return NumVisits;
+}
