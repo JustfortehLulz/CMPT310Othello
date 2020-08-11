@@ -1,7 +1,6 @@
 main
-main.o
-othello.o
 .idea
 .idea/misc.xml
 CMakeLists.txt
 /cmake-build-debug/
+*.o
