@@ -4,30 +4,30 @@ using namespace std;
 
 class OthelloBoard
 {
-	public:
-		int boardArr[64];
-		int movenum;
+public:
+	int boardArr[64];
+	int movenum;
 
-		OthelloBoard();
+	OthelloBoard();
 
-		void print_board();
-	
-		void flip_tile(int turn, int tile);
+	void print_board();
 
-		vector<int> check_legal_moves(int turn);
+	void flip_tile(int turn, int tile);
 
-		void play_move(int turn, int tile);
+	vector<int> check_legal_moves(int turn);
 
-		void print_array();
+	void play_move(int turn, int tile);
 
-		void print_score();
+	void print_array();
 
-		void end_score();
+	void print_score();
 
-		int white_score();
+	void end_score();
 
-		int black_score();
+	int white_score();
 
-		int check_victory(int white,int black);
+	int black_score();
+
+	string calculate_winner(int white, int black);
 
 };
