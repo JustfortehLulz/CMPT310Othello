@@ -28,6 +28,14 @@ OthelloBoard::OthelloBoard()
     movenum = 1;
     return;
 }
+//Copy Constructor
+OthelloBoard::OthelloBoard(const OthelloBoard& Board){
+    for (int i = 0;i<64;i++)
+    {
+        boardArr[i] = Board.boardArr[i];
+    }
+    movenum=Board.movenum;
+}
 
 string OthelloBoard::get_turn() {
     if (this->movenum % 2 == 1) {

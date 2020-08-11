@@ -1,7 +1,9 @@
 main
 main.o
 othello.o
+MCTS.o
+Node.o
 .idea
-.idea/misc.xml
+.idea/misc.xml:x
 CMakeLists.txt
 /cmake-build-debug/

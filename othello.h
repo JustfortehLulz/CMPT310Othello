@@ -1,3 +1,4 @@
+#pragma once
 #include <vector>
 
 using namespace std;
@@ -9,6 +10,8 @@ public:
 	int movenum;
 
 	OthelloBoard();
+
+	OthelloBoard(const OthelloBoard& Board);
 
 	void print_board();
 

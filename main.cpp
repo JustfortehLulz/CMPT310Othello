@@ -4,13 +4,14 @@
 #include "othello.h"
 #include "MCTS.h"
 #include <algorithm>
+#include "Node.h"
 
 
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-
+    OthelloBoard TestNodeBoard;
     bool P1moves = true;
     bool P2moves = true;
     vector<int> moves;
@@ -109,6 +110,7 @@ int main(int argc, char const *argv[])
         cout << "It's a Draw" << endl;
     }
 
-
+    Node TestNode(TestNodeBoard, 20);
+    cout << "Test Node: " << TestNodeBoard.boardArr << "&" << TestNodeBoard.movenum << endl;
     return 0;
 }
