@@ -1,3 +1,6 @@
 main
 main.o
 othello.o
+.idea
+CMakeLists.txt
+/cmake-build-debug/
