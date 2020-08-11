@@ -14,11 +14,11 @@ public:
 
 	string get_turn();
 
-	void flip_tile(int turn, int tile);
+	void flip_tile(int tile);
 
-	vector<int> check_legal_moves(int turn);
+	vector<int> check_legal_moves();
 
-	void play_move(int turn, int tile);
+	void play_move(int tile);
 
 	void print_array();
 

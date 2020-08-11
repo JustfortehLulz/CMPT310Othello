@@ -27,11 +27,11 @@ int main(int argc, char const *argv[])
     {
         if (P1moves || P2moves) {
             cout << "-------------------- TURN " << i << "------------" << endl;
-            if (i % 2 == 1) {
+            if (Board.get_turn() == "black") {
                 cout << "Black Move" << endl;
                 cout << "BLACK LEGAL MOVES" << endl;
 
-                moves = Board.check_legal_moves(Board.movenum);
+                moves = Board.check_legal_moves();
                 for (auto j = moves.begin(); j != moves.end(); ++j) {
                     cout << *j << " " << endl;
                 }
@@ -40,7 +40,7 @@ int main(int argc, char const *argv[])
                     randIndex = rand() % moves.size();
                     cout << endl;
                     cout << "PLAYING THIS MOVE: " << moves[randIndex] << endl;
-                    Board.play_move(Board.movenum, moves[randIndex]);
+                    Board.play_move(moves[randIndex]);
                     Board.print_board();
                     Board.end_score();
                     P1moves = true;
@@ -51,11 +51,11 @@ int main(int argc, char const *argv[])
                 }
                 moves.clear();
             }
-            else if (i % 2 == 0) {
+            else if (Board.get_turn() == "white") {
                 cout << "White Move" << endl;
                 cout << "WHITE LEGAL MOVES" << endl;
 
-                moves = Board.check_legal_moves(Board.movenum);
+                moves = Board.check_legal_moves();
                 for (auto j = moves.begin(); j != moves.end(); ++j) {
                     cout << *j << " " << endl;
                 }
@@ -66,14 +66,14 @@ int main(int argc, char const *argv[])
                     randIndex = rand() % moves.size();
                     cout << endl;
                     cout << "PLAYING THIS MOVE: " << moves[randIndex] << endl;
-                    Board.play_move(Board.movenum, moves[randIndex]);
+                    Board.play_move(moves[randIndex]);
                     /*
                      * Find the index with the value move in the moves vector.
                      */
                      //vector<int>::iterator value=find(moves.begin(), moves.end(), move);
                      //int index = distance(moves.begin(), value);
                      //cout << "PLAYING THIS MOVE: " << move << " AT INDEX: "<< index << endl;
-                     //Board.play_move(Board.movenum, move);
+                     //Board.play_move( move);
                     Board.print_board();
                     Board.end_score();
                     P2moves = true;
