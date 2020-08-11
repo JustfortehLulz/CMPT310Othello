@@ -1,6 +1,9 @@
 #include "Node.h"
+#include <string>
 
-Node::Node(OthelloBoard ParentState, int index){
+using namespace std;
+
+Node::Node(OthelloBoard ParentState, int index) {
     OthelloBoard BoardState = ParentState;  // new instance of the board with the requested move done.
     BoardState.play_move(index);
 }

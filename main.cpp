@@ -112,5 +112,7 @@ int main(int argc, char const *argv[])
 
     Node TestNode(TestNodeBoard, 20);
     cout << "Test Node: " << TestNodeBoard.boardArr << "&" << TestNodeBoard.movenum << endl;
+    TestNode.PrintNode();
+
     return 0;
 }

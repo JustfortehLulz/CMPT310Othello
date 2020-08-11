@@ -29,7 +29,7 @@ OthelloBoard::OthelloBoard()
     return;
 }
 //Copy Constructor
-OthelloBoard::OthelloBoard(const OthelloBoard& Board){
+OthelloBoard::OthelloBoard(const OthelloBoard& Board) {
     for (int i = 0;i<64;i++)
     {
         boardArr[i] = Board.boardArr[i];

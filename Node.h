@@ -1,7 +1,9 @@
 #pragma once
+#include "othello.h"
+
 
 class Node {
-    OthelloBoard Board;
+    OthelloBoard BoardState;
 public:
     //initialization.
     Node(OthelloBoard ParentState, int index);
