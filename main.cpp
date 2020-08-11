@@ -109,10 +109,14 @@ int main(int argc, char const *argv[])
     {
         cout << "It's a Draw" << endl;
     }
+    cout << "Test Node: "   << endl;
 
-    Node TestNode(TestNodeBoard, 20);
-    cout << "Test Node: " << TestNodeBoard.boardArr << "&" << TestNodeBoard.movenum << endl;
+    Node TestNode(TestNodeBoard);
+
+    TestNode.PlayMove(37);
+    TestNodeBoard.print_board();
     TestNode.PrintNode();
+
 
     return 0;
 }

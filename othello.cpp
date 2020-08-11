@@ -448,6 +448,7 @@ void OthelloBoard::play_move(int tile)
         // Player 2 white
         else if (this->get_turn() == "white")
         {
+
             boardArr[tile] = WHITE;
             flip_tile(tile);
         }
@@ -676,7 +677,7 @@ void OthelloBoard::flip_tile(int tile)
         if (tile % 8 == 0) {
         }
         else {
-            while (boardArr[left] == 0) {
+            while (boardArr[left] == BLACK) {
                 flipPieces.push_back(left);
                 left -= 1;
                 if (left % 8 == 7 || boardArr[left] == EMPTY) {
@@ -755,7 +756,7 @@ void OthelloBoard::flip_tile(int tile)
         //DOWN-LEFT
         if (!((tile > 55) || (tile % 8 == 0)))
         {
-            while (boardArr[down_left] == 0)
+            while (boardArr[down_left] == BLACK)
             {
                 flipPieces.push_back(down_left);
 
@@ -765,12 +766,12 @@ void OthelloBoard::flip_tile(int tile)
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[down_left] == 1)
+                if (boardArr[down_left] == WHITE)
                 {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
@@ -778,7 +779,7 @@ void OthelloBoard::flip_tile(int tile)
         //UP-RIGHT
         if (!((tile-8 < 0) || (tile % 8 == 7)))
         {
-            while (boardArr[up_right] == 0)
+            while (boardArr[up_right] == BLACK)
             {
                 flipPieces.push_back(up_right);
                 up_right -= 7;
@@ -787,12 +788,12 @@ void OthelloBoard::flip_tile(int tile)
                     flipPieces.clear();
                     break;
                 }
-                if (boardArr[up_right] == 1)
+                if (boardArr[up_right] == WHITE)
                 {
                     // hit a white piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j)
                     {
-                        boardArr[*j] = 1;
+                        boardArr[*j] = WHITE;
                     }
                 }
             }
