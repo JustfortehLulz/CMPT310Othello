@@ -144,6 +144,7 @@ void Node::makeOptimalMove()
     {
         maxIndex = 0; // Failsafe for errors in index calculation
     }
+  
     BoardState.play_move(ValidMoves.at(maxIndex));
     spawnChildren();
 }
@@ -158,7 +159,7 @@ void Node::makeOptimalRobustMove()
 
 void Node::nodeExpansion()
 {
-    int Param = 700;
+    int Param = 1000;
     int counter = 0;
     srand(time(NULL));
     int NumberOfPlayouts = 0;

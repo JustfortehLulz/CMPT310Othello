@@ -1,0 +1,1187 @@
+MCTS vs Modified MCTS Data file
+take winrate of WHITE wins (white is modified MCTS in the code)
+
+
+
+AI 1 Turn 0
+Num Play-outs: 86756
+Run time:      1284322 Micro seconds
+
+AI 2 Turn 1
+Num Play-outs: 84815
+Run time:      1242627 Micro seconds
+
+AI 1 Turn 2
+Num Play-outs: 83522
+Run time:      1231552 Micro seconds
+
+AI 2 Turn 3
+Num Play-outs: 81873
+Run time:      1216010 Micro seconds
+
+AI 1 Turn 4
+Num Play-outs: 81013
+Run time:      1315746 Micro seconds
+
+AI 2 Turn 5
+Num Play-outs: 79053
+Run time:      1319819 Micro seconds
+
+AI 1 Turn 6
+Num Play-outs: 78077
+Run time:      1274381 Micro seconds
+
+AI 2 Turn 7
+Num Play-outs: 76296
+Run time:      1360924 Micro seconds
+
+AI 1 Turn 8
+Num Play-outs: 74934
+Run time:      1232619 Micro seconds
+
+AI 2 Turn 9
+Num Play-outs: 73644
+Run time:      1201663 Micro seconds
+
+AI 1 Turn 10
+Num Play-outs: 72162
+Run time:      1203778 Micro seconds
+
+AI 2 Turn 11
+Num Play-outs: 70091
+Run time:      1167812 Micro seconds
+
+AI 1 Turn 12
+Num Play-outs: 68243
+Run time:      1214168 Micro seconds
+
+AI 2 Turn 13
+Num Play-outs: 67707
+Run time:      1177841 Micro seconds
+
+AI 1 Turn 14
+Num Play-outs: 65999
+Run time:      1167797 Micro seconds
+
+AI 2 Turn 15
+Num Play-outs: 64803
+Run time:      1148863 Micro seconds
+
+AI 1 Turn 16
+Num Play-outs: 63288
+Run time:      1171837 Micro seconds
+
+AI 2 Turn 17
+Num Play-outs: 61628
+Run time:      1128488 Micro seconds
+
+AI 1 Turn 18
+Num Play-outs: 60510
+Run time:      1114831 Micro seconds
+
+AI 2 Turn 19
+Num Play-outs: 58799
+Run time:      1094803 Micro seconds
+
+AI 1 Turn 20
+Num Play-outs: 57488
+Run time:      1055552 Micro seconds
+
+AI 2 Turn 21
+Num Play-outs: 55743
+Run time:      1044904 Micro seconds
+
+AI 1 Turn 22
+Num Play-outs: 54330
+Run time:      991224 Micro seconds
+
+AI 2 Turn 23
+Num Play-outs: 52917
+Run time:      962082 Micro seconds
+
+AI 1 Turn 24
+Num Play-outs: 51381
+Run time:      933213 Micro seconds
+
+AI 2 Turn 25
+Num Play-outs: 49977
+Run time:      913384 Micro seconds
+
+AI 1 Turn 26
+Num Play-outs: 48487
+Run time:      896600 Micro seconds
+
+AI 2 Turn 27
+Num Play-outs: 46838
+Run time:      867477 Micro seconds
+
+AI 1 Turn 28
+Num Play-outs: 45085
+Run time:      822406 Micro seconds
+
+AI 2 Turn 29
+Num Play-outs: 43240
+Run time:      789767 Micro seconds
+
+AI 1 Turn 30
+Num Play-outs: 41598
+Run time:      774382 Micro seconds
+
+AI 2 Turn 31
+Num Play-outs: 40061
+Run time:      746099 Micro seconds
+
+AI 1 Turn 32
+Num Play-outs: 39040
+Run time:      732926 Micro seconds
+
+AI 2 Turn 33
+Num Play-outs: 37465
+Run time:      695132 Micro seconds
+
+AI 1 Turn 34
+Num Play-outs: 35618
+Run time:      651562 Micro seconds
+
+AI 2 Turn 35
+Num Play-outs: 33935
+Run time:      600305 Micro seconds
+
+AI 1 Turn 36
+Num Play-outs: 32818
+Run time:      579951 Micro seconds
+
+AI 2 Turn 37
+Num Play-outs: 31715
+Run time:      562909 Micro seconds
+
+AI 1 Turn 38
+Num Play-outs: 29287
+Run time:      504556 Micro seconds
+
+AI 2 Turn 39
+Num Play-outs: 26896
+Run time:      464780 Micro seconds
+
+AI 1 Turn 40
+Num Play-outs: 25076
+Run time:      423044 Micro seconds
+
+AI 2 Turn 41
+Num Play-outs: 23697
+Run time:      466237 Micro seconds
+
+AI 1 Turn 42
+Num Play-outs: 21838
+Run time:      400087 Micro seconds
+
+AI 2 Turn 43
+Num Play-outs: 21060
+Run time:      394352 Micro seconds
+
+AI 1 Turn 44
+Num Play-outs: 19985
+Run time:      325297 Micro seconds
+
+AI 2 Turn 45
+Num Play-outs: 17179
+Run time:      270103 Micro seconds
+
+AI 1 Turn 46
+Num Play-outs: 16490
+Run time:      257015 Micro seconds
+
+AI 2 Turn 47
+Num Play-outs: 15903
+Run time:      245481 Micro seconds
+
+AI 1 Turn 48
+Num Play-outs: 14192
+Run time:      221141 Micro seconds
+
+AI 2 Turn 49
+Num Play-outs: 12343
+Run time:      170807 Micro seconds
+
+AI 1 Turn 50
+Num Play-outs: 12644
+Run time:      174082 Micro seconds
+
+AI 2 Turn 51
+Num Play-outs: 10661
+Run time:      142666 Micro seconds
+
+AI 1 Turn 52
+Num Play-outs: 7134
+Run time:      94429 Micro seconds
+
+AI 2 Turn 53
+Num Play-outs: 6826
+Run time:      83454 Micro seconds
+
+AI 1 Turn 54
+Num Play-outs: 1501
+Run time:      19863 Micro seconds
+White: 15 Black: 44
+Winner->BLACK, val:    29
+
+
+AI 1 Turn 0
+Num Play-outs: 86735
+Run time:      1295738 Micro seconds
+
+AI 2 Turn 1
+Num Play-outs: 85425
+Run time:      1311544 Micro seconds
+
+AI 1 Turn 2
+Num Play-outs: 84054
+Run time:      1318752 Micro seconds
+
+AI 2 Turn 3
+Num Play-outs: 82369
+Run time:      1322909 Micro seconds
+
+AI 1 Turn 4
+Num Play-outs: 81256
+Run time:      1320326 Micro seconds
+
+AI 2 Turn 5
+Num Play-outs: 79109
+Run time:      1279586 Micro seconds
+
+AI 1 Turn 6
+Num Play-outs: 77791
+Run time:      1297144 Micro seconds
+
+AI 2 Turn 7
+Num Play-outs: 76311
+Run time:      1290034 Micro seconds
+
+AI 1 Turn 8
+Num Play-outs: 75000
+Run time:      1371637 Micro seconds
+
+AI 2 Turn 9
+Num Play-outs: 72791
+Run time:      1272511 Micro seconds
+
+AI 1 Turn 10
+Num Play-outs: 72007
+Run time:      1330364 Micro seconds
+
+AI 2 Turn 11
+Num Play-outs: 70511
+Run time:      1264002 Micro seconds
+
+AI 1 Turn 12
+Num Play-outs: 69317
+Run time:      1234241 Micro seconds
+
+AI 2 Turn 13
+Num Play-outs: 67590
+Run time:      1230214 Micro seconds
+
+AI 1 Turn 14
+Num Play-outs: 66173
+Run time:      1325656 Micro seconds
+
+AI 2 Turn 15
+Num Play-outs: 64478
+Run time:      1274126 Micro seconds
+
+AI 1 Turn 16
+Num Play-outs: 62672
+Run time:      1223686 Micro seconds
+
+AI 2 Turn 17
+Num Play-outs: 61208
+Run time:      1205621 Micro seconds
+
+AI 1 Turn 18
+Num Play-outs: 59795
+Run time:      1176542 Micro seconds
+
+AI 2 Turn 19
+Num Play-outs: 58304
+Run time:      1119108 Micro seconds
+
+AI 1 Turn 20
+Num Play-outs: 56808
+Run time:      1121620 Micro seconds
+
+AI 2 Turn 21
+Num Play-outs: 55588
+Run time:      1121200 Micro seconds
+
+AI 1 Turn 22
+Num Play-outs: 54108
+Run time:      1276544 Micro seconds
+
+AI 2 Turn 23
+Num Play-outs: 52629
+Run time:      1512999 Micro seconds
+
+AI 1 Turn 24
+Num Play-outs: 51034
+Run time:      1075956 Micro seconds
+
+AI 2 Turn 25
+Num Play-outs: 49908
+Run time:      923022 Micro seconds
+
+AI 1 Turn 26
+Num Play-outs: 48280
+Run time:      901485 Micro seconds
+
+AI 2 Turn 27
+Num Play-outs: 46832
+Run time:      875929 Micro seconds
+
+AI 1 Turn 28
+Num Play-outs: 45312
+Run time:      833592 Micro seconds
+
+AI 2 Turn 29
+Num Play-outs: 43849
+Run time:      793521 Micro seconds
+
+AI 1 Turn 30
+Num Play-outs: 42316
+Run time:      776409 Micro seconds
+
+AI 2 Turn 31
+Num Play-outs: 40966
+Run time:      751633 Micro seconds
+
+AI 1 Turn 32
+Num Play-outs: 39245
+Run time:      702605 Micro seconds
+
+AI 2 Turn 33
+Num Play-outs: 37849
+Run time:      685801 Micro seconds
+
+AI 1 Turn 34
+Num Play-outs: 36174
+Run time:      645185 Micro seconds
+
+AI 2 Turn 35
+Num Play-outs: 34312
+Run time:      635056 Micro seconds
+
+AI 1 Turn 36
+Num Play-outs: 32983
+Run time:      595926 Micro seconds
+
+AI 2 Turn 37
+Num Play-outs: 31521
+Run time:      567137 Micro seconds
+
+AI 1 Turn 38
+Num Play-outs: 30367
+Run time:      556237 Micro seconds
+
+AI 2 Turn 39
+Num Play-outs: 28464
+Run time:      583990 Micro seconds
+
+AI 1 Turn 40
+Num Play-outs: 26520
+Run time:      508001 Micro seconds
+
+AI 2 Turn 41
+Num Play-outs: 25342
+Run time:      490581 Micro seconds
+
+AI 1 Turn 42
+Num Play-outs: 24344
+Run time:      471511 Micro seconds
+
+AI 2 Turn 43
+Num Play-outs: 23019
+Run time:      391107 Micro seconds
+
+AI 1 Turn 44
+Num Play-outs: 21053
+Run time:      355376 Micro seconds
+
+AI 2 Turn 45
+Num Play-outs: 19906
+Run time:      334848 Micro seconds
+
+AI 1 Turn 46
+Num Play-outs: 18997
+Run time:      298662 Micro seconds
+
+AI 2 Turn 47
+Num Play-outs: 17258
+Run time:      259650 Micro seconds
+
+AI 1 Turn 48
+Num Play-outs: 16002
+Run time:      239356 Micro seconds
+
+AI 2 Turn 49
+Num Play-outs: 14597
+Run time:      227867 Micro seconds
+
+AI 1 Turn 50
+Num Play-outs: 13222
+Run time:      200736 Micro seconds
+
+AI 2 Turn 51
+Num Play-outs: 11837
+Run time:      174546 Micro seconds
+
+AI 1 Turn 52
+Num Play-outs: 10101
+Run time:      159273 Micro seconds
+
+AI 2 Turn 53
+Num Play-outs: 8928
+Run time:      136262 Micro seconds
+
+AI 1 Turn 54
+Num Play-outs: 7229
+Run time:      107224 Micro seconds
+
+AI 2 Turn 55
+Num Play-outs: 6190
+Run time:      102472 Micro seconds
+
+AI 1 Turn 56
+Num Play-outs: 4004
+Run time:      52329 Micro seconds
+
+AI 2 Turn 57
+Num Play-outs: 2494
+Run time:      33881 Micro seconds
+White: 41 Black: 21
+Winner->WHITE, val:    -20
+
+
+AI 1 Turn 0
+Num Play-outs: 86746
+Run time:      1384220 Micro seconds
+
+AI 2 Turn 1
+Num Play-outs: 85340
+Run time:      1519643 Micro seconds
+
+AI 1 Turn 2
+Num Play-outs: 84281
+Run time:      1359473 Micro seconds
+
+AI 2 Turn 3
+Num Play-outs: 82437
+Run time:      1488569 Micro seconds
+
+AI 1 Turn 4
+Num Play-outs: 80841
+Run time:      1473083 Micro seconds
+
+AI 2 Turn 5
+Num Play-outs: 79269
+Run time:      1388127 Micro seconds
+
+AI 1 Turn 6
+Num Play-outs: 77866
+Run time:      1397890 Micro seconds
+
+AI 2 Turn 7
+Num Play-outs: 76223
+Run time:      1338438 Micro seconds
+
+AI 1 Turn 8
+Num Play-outs: 74974
+Run time:      1335540 Micro seconds
+
+AI 2 Turn 9
+Num Play-outs: 72204
+Run time:      1315347 Micro seconds
+
+AI 1 Turn 10
+Num Play-outs: 62974
+Run time:      1113479 Micro seconds
+
+AI 2 Turn 11
+Num Play-outs: 70683
+Run time:      1294400 Micro seconds
+
+AI 1 Turn 12
+Num Play-outs: 69179
+Run time:      1270388 Micro seconds
+
+AI 2 Turn 13
+Num Play-outs: 67761
+Run time:      1243395 Micro seconds
+
+AI 1 Turn 14
+Num Play-outs: 66093
+Run time:      1233937 Micro seconds
+
+AI 2 Turn 15
+Num Play-outs: 64567
+Run time:      1186161 Micro seconds
+
+AI 1 Turn 16
+Num Play-outs: 63240
+Run time:      1198236 Micro seconds
+
+AI 2 Turn 17
+Num Play-outs: 61794
+Run time:      1182705 Micro seconds
+
+AI 1 Turn 18
+Num Play-outs: 60191
+Run time:      1135081 Micro seconds
+
+AI 2 Turn 19
+Num Play-outs: 58960
+Run time:      1137302 Micro seconds
+
+AI 1 Turn 20
+Num Play-outs: 57364
+Run time:      1105400 Micro seconds
+
+AI 2 Turn 21
+Num Play-outs: 56004
+Run time:      1083528 Micro seconds
+
+AI 1 Turn 22
+Num Play-outs: 54565
+Run time:      1106427 Micro seconds
+
+AI 2 Turn 23
+Num Play-outs: 53142
+Run time:      1070557 Micro seconds
+
+AI 1 Turn 24
+Num Play-outs: 51543
+Run time:      1021492 Micro seconds
+
+AI 2 Turn 25
+Num Play-outs: 49945
+Run time:      990741 Micro seconds
+
+AI 1 Turn 26
+Num Play-outs: 48707
+Run time:      954998 Micro seconds
+
+AI 2 Turn 27
+Num Play-outs: 46886
+Run time:      915929 Micro seconds
+
+AI 1 Turn 28
+Num Play-outs: 45359
+Run time:      885394 Micro seconds
+
+AI 2 Turn 29
+Num Play-outs: 43907
+Run time:      860513 Micro seconds
+
+AI 1 Turn 30
+Num Play-outs: 42488
+Run time:      893792 Micro seconds
+
+AI 2 Turn 31
+Num Play-outs: 40981
+Run time:      833427 Micro seconds
+
+AI 1 Turn 32
+Num Play-outs: 39333
+Run time:      767935 Micro seconds
+
+AI 2 Turn 33
+Num Play-outs: 38063
+Run time:      745513 Micro seconds
+
+AI 1 Turn 34
+Num Play-outs: 36456
+Run time:      690407 Micro seconds
+
+AI 2 Turn 35
+Num Play-outs: 34836
+Run time:      656340 Micro seconds
+
+AI 1 Turn 36
+Num Play-outs: 33444
+Run time:      629590 Micro seconds
+
+AI 2 Turn 37
+Num Play-outs: 31989
+Run time:      604566 Micro seconds
+
+AI 1 Turn 38
+Num Play-outs: 30456
+Run time:      567499 Micro seconds
+
+AI 2 Turn 39
+Num Play-outs: 29142
+Run time:      543609 Micro seconds
+
+AI 1 Turn 40
+Num Play-outs: 27714
+Run time:      518262 Micro seconds
+
+AI 2 Turn 41
+Num Play-outs: 26231
+Run time:      484132 Micro seconds
+
+AI 1 Turn 42
+Num Play-outs: 24828
+Run time:      449098 Micro seconds
+
+AI 2 Turn 43
+Num Play-outs: 23394
+Run time:      422265 Micro seconds
+
+AI 1 Turn 44
+Num Play-outs: 21724
+Run time:      390933 Micro seconds
+
+AI 2 Turn 45
+Num Play-outs: 20162
+Run time:      357928 Micro seconds
+
+AI 1 Turn 46
+Num Play-outs: 18721
+Run time:      329786 Micro seconds
+
+AI 2 Turn 47
+Num Play-outs: 17295
+Run time:      292645 Micro seconds
+
+AI 1 Turn 48
+Num Play-outs: 16234
+Run time:      277848 Micro seconds
+
+AI 2 Turn 49
+Num Play-outs: 14470
+Run time:      245225 Micro seconds
+
+AI 1 Turn 50
+Num Play-outs: 13079
+Run time:      212111 Micro seconds
+
+AI 2 Turn 51
+Num Play-outs: 11845
+Run time:      199338 Micro seconds
+
+AI 1 Turn 52
+Num Play-outs: 10666
+Run time:      169603 Micro seconds
+
+AI 2 Turn 53
+Num Play-outs: 9427
+Run time:      149629 Micro seconds
+
+AI 1 Turn 54
+Num Play-outs: 7547
+Run time:      112798 Micro seconds
+
+AI 2 Turn 55
+Num Play-outs: 5954
+Run time:      87693 Micro seconds
+
+AI 1 Turn 56
+Num Play-outs: 4979
+Run time:      64695 Micro seconds
+
+AI 2 Turn 57
+Num Play-outs: 3500
+Run time:      46974 Micro seconds
+
+AI 1 Turn 58
+Num Play-outs: 3002
+Run time:      36939 Micro seconds
+
+AI 2 Turn 59
+Num Play-outs: 1501
+Run time:      19572 Micro seconds
+White: 34 Black: 30
+Winner->WHITE, val:    -4
+
+
+AI 1 Turn 0
+Num Play-outs: 86990
+Run time:      1326115 Micro seconds
+
+AI 2 Turn 1
+Num Play-outs: 85454
+Run time:      1350089 Micro seconds
+
+AI 1 Turn 2
+Num Play-outs: 83711
+Run time:      1369022 Micro seconds
+
+AI 2 Turn 3
+Num Play-outs: 82478
+Run time:      1385290 Micro seconds
+
+AI 1 Turn 4
+Num Play-outs: 80719
+Run time:      1390297 Micro seconds
+
+AI 2 Turn 5
+Num Play-outs: 79649
+Run time:      1375221 Micro seconds
+
+AI 1 Turn 6
+Num Play-outs: 77971
+Run time:      1365692 Micro seconds
+
+AI 2 Turn 7
+Num Play-outs: 76843
+Run time:      1371182 Micro seconds
+
+AI 1 Turn 8
+Num Play-outs: 75324
+Run time:      1370573 Micro seconds
+
+AI 2 Turn 9
+Num Play-outs: 73615
+Run time:      1288746 Micro seconds
+
+AI 1 Turn 10
+Num Play-outs: 72150
+Run time:      1333015 Micro seconds
+
+AI 2 Turn 11
+Num Play-outs: 70844
+Run time:      1350441 Micro seconds
+
+AI 1 Turn 12
+Num Play-outs: 69262
+Run time:      1391079 Micro seconds
+
+AI 2 Turn 13
+Num Play-outs: 67769
+Run time:      1377274 Micro seconds
+
+AI 1 Turn 14
+Num Play-outs: 66356
+Run time:      1304133 Micro seconds
+
+AI 2 Turn 15
+Num Play-outs: 64762
+Run time:      1147284 Micro seconds
+
+AI 1 Turn 16
+Num Play-outs: 63049
+Run time:      1116823 Micro seconds
+
+AI 2 Turn 17
+Num Play-outs: 61658
+Run time:      1099558 Micro seconds
+
+AI 1 Turn 18
+Num Play-outs: 60311
+Run time:      1080162 Micro seconds
+
+AI 2 Turn 19
+Num Play-outs: 58975
+Run time:      1048831 Micro seconds
+
+AI 1 Turn 20
+Num Play-outs: 57311
+Run time:      1049937 Micro seconds
+
+AI 2 Turn 21
+Num Play-outs: 56061
+Run time:      1034776 Micro seconds
+
+AI 1 Turn 22
+Num Play-outs: 54374
+Run time:      1005886 Micro seconds
+
+AI 2 Turn 23
+Num Play-outs: 52920
+Run time:      981844 Micro seconds
+
+AI 1 Turn 24
+Num Play-outs: 51532
+Run time:      962803 Micro seconds
+
+AI 2 Turn 25
+Num Play-outs: 49830
+Run time:      932394 Micro seconds
+
+AI 1 Turn 26
+Num Play-outs: 48599
+Run time:      923053 Micro seconds
+
+AI 2 Turn 27
+Num Play-outs: 46886
+Run time:      880835 Micro seconds
+
+AI 1 Turn 28
+Num Play-outs: 45237
+Run time:      858460 Micro seconds
+
+AI 2 Turn 29
+Num Play-outs: 43803
+Run time:      826223 Micro seconds
+
+AI 1 Turn 30
+Num Play-outs: 42268
+Run time:      801174 Micro seconds
+
+AI 2 Turn 31
+Num Play-outs: 40935
+Run time:      796353 Micro seconds
+
+AI 1 Turn 32
+Num Play-outs: 39478
+Run time:      765381 Micro seconds
+
+AI 2 Turn 33
+Num Play-outs: 38136
+Run time:      745491 Micro seconds
+
+AI 1 Turn 34
+Num Play-outs: 36457
+Run time:      704498 Micro seconds
+
+AI 2 Turn 35
+Num Play-outs: 34755
+Run time:      691307 Micro seconds
+
+AI 1 Turn 36
+Num Play-outs: 33271
+Run time:      635380 Micro seconds
+
+AI 2 Turn 37
+Num Play-outs: 31958
+Run time:      602950 Micro seconds
+
+AI 1 Turn 38
+Num Play-outs: 30512
+Run time:      577697 Micro seconds
+
+AI 2 Turn 39
+Num Play-outs: 29062
+Run time:      561590 Micro seconds
+
+AI 1 Turn 40
+Num Play-outs: 27746
+Run time:      533148 Micro seconds
+
+AI 2 Turn 41
+Num Play-outs: 26317
+Run time:      487460 Micro seconds
+
+AI 1 Turn 42
+Num Play-outs: 24942
+Run time:      434776 Micro seconds
+
+AI 2 Turn 43
+Num Play-outs: 23239
+Run time:      401101 Micro seconds
+
+AI 1 Turn 44
+Num Play-outs: 21462
+Run time:      362218 Micro seconds
+
+AI 2 Turn 45
+Num Play-outs: 19693
+Run time:      319910 Micro seconds
+
+AI 1 Turn 46
+Num Play-outs: 18447
+Run time:      300355 Micro seconds
+
+AI 2 Turn 47
+Num Play-outs: 16759
+Run time:      261957 Micro seconds
+
+AI 1 Turn 48
+Num Play-outs: 15854
+Run time:      257282 Micro seconds
+
+AI 2 Turn 49
+Num Play-outs: 14158
+Run time:      210957 Micro seconds
+
+AI 1 Turn 50
+Num Play-outs: 12886
+Run time:      188772 Micro seconds
+
+AI 2 Turn 51
+Num Play-outs: 11270
+Run time:      159558 Micro seconds
+
+AI 1 Turn 52
+Num Play-outs: 10139
+Run time:      140922 Micro seconds
+
+AI 2 Turn 53
+Num Play-outs: 8825
+Run time:      125342 Micro seconds
+
+AI 1 Turn 54
+Num Play-outs: 7932
+Run time:      106707 Micro seconds
+
+AI 2 Turn 55
+Num Play-outs: 6684
+Run time:      87492 Micro seconds
+
+AI 1 Turn 56
+Num Play-outs: 5135
+Run time:      62858 Micro seconds
+
+AI 2 Turn 57
+Num Play-outs: 3524
+Run time:      41723 Micro seconds
+
+AI 1 Turn 58
+Num Play-outs: 1501
+Run time:      20004 Micro seconds
+White: 30 Black: 33
+Winner->BLACK, val:    3
+
+
+AI 1 Turn 0
+Num Play-outs: 87011
+Run time:      1303862 Micro seconds
+
+AI 2 Turn 1
+Num Play-outs: 85432
+Run time:      1305438 Micro seconds
+
+AI 1 Turn 2
+Num Play-outs: 84065
+Run time:      1365425 Micro seconds
+
+AI 2 Turn 3
+Num Play-outs: 82597
+Run time:      1342754 Micro seconds
+
+AI 1 Turn 4
+Num Play-outs: 81185
+Run time:      1335831 Micro seconds
+
+AI 2 Turn 5
+Num Play-outs: 79485
+Run time:      1321490 Micro seconds
+
+AI 1 Turn 6
+Num Play-outs: 78152
+Run time:      1312525 Micro seconds
+
+AI 2 Turn 7
+Num Play-outs: 76624
+Run time:      1356584 Micro seconds
+
+AI 1 Turn 8
+Num Play-outs: 74849
+Run time:      1245657 Micro seconds
+
+AI 2 Turn 9
+Num Play-outs: 73589
+Run time:      1351796 Micro seconds
+
+AI 1 Turn 10
+Num Play-outs: 72250
+Run time:      1246882 Micro seconds
+
+AI 2 Turn 11
+Num Play-outs: 70089
+Run time:      1182189 Micro seconds
+
+AI 1 Turn 12
+Num Play-outs: 68782
+Run time:      1185258 Micro seconds
+
+AI 2 Turn 13
+Num Play-outs: 66924
+Run time:      1126119 Micro seconds
+
+AI 1 Turn 14
+Num Play-outs: 65787
+Run time:      1123169 Micro seconds
+
+AI 2 Turn 15
+Num Play-outs: 63966
+Run time:      1081550 Micro seconds
+
+AI 1 Turn 16
+Num Play-outs: 61454
+Run time:      1026394 Micro seconds
+
+AI 2 Turn 17
+Num Play-outs: 58298
+Run time:      968915 Micro seconds
+
+AI 1 Turn 18
+Num Play-outs: 55471
+Run time:      935858 Micro seconds
+
+AI 2 Turn 19
+Num Play-outs: 58441
+Run time:      1034685 Micro seconds
+
+AI 1 Turn 20
+Num Play-outs: 57407
+Run time:      1031611 Micro seconds
+
+AI 2 Turn 21
+Num Play-outs: 55780
+Run time:      1005996 Micro seconds
+
+AI 1 Turn 22
+Num Play-outs: 54254
+Run time:      975484 Micro seconds
+
+AI 2 Turn 23
+Num Play-outs: 52875
+Run time:      972355 Micro seconds
+
+AI 1 Turn 24
+Num Play-outs: 51309
+Run time:      931745 Micro seconds
+
+AI 2 Turn 25
+Num Play-outs: 49595
+Run time:      881327 Micro seconds
+
+AI 1 Turn 26
+Num Play-outs: 48305
+Run time:      880197 Micro seconds
+
+AI 2 Turn 27
+Num Play-outs: 46871
+Run time:      861103 Micro seconds
+
+AI 1 Turn 28
+Num Play-outs: 45480
+Run time:      829116 Micro seconds
+
+AI 2 Turn 29
+Num Play-outs: 43880
+Run time:      785808 Micro seconds
+
+AI 1 Turn 30
+Num Play-outs: 42439
+Run time:      823535 Micro seconds
+
+AI 2 Turn 31
+Num Play-outs: 40907
+Run time:      721253 Micro seconds
+
+AI 1 Turn 32
+Num Play-outs: 39358
+Run time:      693999 Micro seconds
+
+AI 2 Turn 33
+Num Play-outs: 37891
+Run time:      667857 Micro seconds
+
+AI 1 Turn 34
+Num Play-outs: 36499
+Run time:      659433 Micro seconds
+
+AI 2 Turn 35
+Num Play-outs: 34867
+Run time:      629779 Micro seconds
+
+AI 1 Turn 36
+Num Play-outs: 33501
+Run time:      617198 Micro seconds
+
+AI 2 Turn 37
+Num Play-outs: 31984
+Run time:      600445 Micro seconds
+
+AI 1 Turn 38
+Num Play-outs: 30585
+Run time:      615492 Micro seconds
+
+AI 2 Turn 39
+Num Play-outs: 28730
+Run time:      548772 Micro seconds
+
+AI 1 Turn 40
+Num Play-outs: 27343
+Run time:      517597 Micro seconds
+
+AI 2 Turn 41
+Num Play-outs: 25796
+Run time:      473216 Micro seconds
+
+AI 1 Turn 42
+Num Play-outs: 24503
+Run time:      448662 Micro seconds
+
+AI 2 Turn 43
+Num Play-outs: 23188
+Run time:      426484 Micro seconds
+
+AI 1 Turn 44
+Num Play-outs: 21917
+Run time:      403889 Micro seconds
+
+AI 2 Turn 45
+Num Play-outs: 20574
+Run time:      380848 Micro seconds
+
+AI 1 Turn 46
+Num Play-outs: 18829
+Run time:      344811 Micro seconds
+
+AI 2 Turn 47
+Num Play-outs: 17607
+Run time:      341857 Micro seconds
+
+AI 1 Turn 48
+Num Play-outs: 16321
+Run time:      309491 Micro seconds
+
+AI 2 Turn 49
+Num Play-outs: 14960
+Run time:      265499 Micro seconds
+
+AI 1 Turn 50
+Num Play-outs: 13548
+Run time:      231953 Micro seconds
+
+AI 2 Turn 51
+Num Play-outs: 12283
+Run time:      188998 Micro seconds
+
+AI 1 Turn 52
+Num Play-outs: 10901
+Run time:      173996 Micro seconds
+
+AI 2 Turn 53
+Num Play-outs: 9205
+Run time:      141331 Micro seconds
+
+AI 1 Turn 54
+Num Play-outs: 7734
+Run time:      119679 Micro seconds
+
+AI 2 Turn 55
+Num Play-outs: 6642
+Run time:      106411 Micro seconds
+
+AI 1 Turn 56
+Num Play-outs: 5475
+Run time:      78949 Micro seconds
+
+AI 2 Turn 57
+Num Play-outs: 4503
+Run time:      65871 Micro seconds
+
+AI 1 Turn 58
+Num Play-outs: 3002
+Run time:      38668 Micro seconds
+
+AI 2 Turn 59
+Num Play-outs: 1501
+Run time:      19485 Micro seconds
+White: 44 Black: 20
+Winner->WHITE, val:    -24
+
