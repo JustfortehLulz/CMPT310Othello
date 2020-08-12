@@ -31,7 +31,11 @@ public:
 
     int getUCB1Index();
 
+    int getUCB1MaxChildIndex();
+
     void makeOptimalMove();
+
+    void makeOptimalRobustMove();
 
     void nodeExpansion();
 

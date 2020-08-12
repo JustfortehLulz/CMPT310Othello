@@ -23,17 +23,30 @@ int main(int argc, char const *argv[])
     while (board->isTerminus() == false){
         string current_turn = board->BoardState.get_turn();
         if(current_turn == "black"){
+            cout << endl;
+            cout << "AI 1 Turn." << endl;
             auto current_time = std::chrono::high_resolution_clock::now();
             board->nodeExpansion();
             auto end_time = std::chrono::high_resolution_clock::now();
             auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end_time - current_time ).count();
             cout << "Run time:      " << duration << " Micro seconds" << endl;
-            board->makeOptimalMove();
+            board->makeOptimalMove(); //Vanilla MCTS Algorithm.
         }
         else if(current_turn == "white"){
-            moves = board->BoardState.white_legal_moves();
-            int randIndex = rand() % moves.size();
-            board->BoardState.play_move(moves.at(randIndex));
+            //white makes random moves in this block
+//            moves = board->BoardState.white_legal_moves();
+//            int randIndex = rand() % moves.size();
+//            board->BoardState.play_move(moves.at(randIndex));
+
+            //This block of code to run black as AI2
+            cout << endl;
+            cout << "AI 2 Turn." << endl;
+            auto current_time = std::chrono::high_resolution_clock::now();
+            board->nodeExpansion();
+            auto end_time = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end_time - current_time ).count();
+            cout << "Run time:      " << duration << " Micro seconds" << endl;
+            board->makeOptimalRobustMove(); // modified MCTS Algorithm.
         }
 //        board->BoardState.print_board();
 //        cout << "Board State #: " << counter << endl;
@@ -41,6 +54,7 @@ int main(int argc, char const *argv[])
 //        cout << "Is Board State Terminus? " << isTerminus << endl;
         counter++;
     }
+//    board->BoardState.print_board();
     board->BoardState.end_score();
     double Value = board->BoardState.rolloutValue();
     if(Value > 0){
