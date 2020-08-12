@@ -64,7 +64,7 @@ int main(int argc, char const *argv[])
         //        cout << "Is Board State Terminus? " << isTerminus << endl;
         counter++;
     }
-    //    board->BoardState.print_board();
+    board->BoardState.print_board();
     board->BoardState.end_score();
     double Value = board->BoardState.rolloutValue();
     if (Value > 0)
