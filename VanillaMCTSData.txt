@@ -1,0 +1,624 @@
+includes data for 10 runs of regular MCTS VS random moving white player
+parameter for node expansion is set to 700 deep
+
+Num Play-outs: 40622
+Run time:      673785 Micro seconds
+Num Play-outs: 39036
+Run time:      648811 Micro seconds
+Num Play-outs: 37807
+Run time:      648506 Micro seconds
+Num Play-outs: 36492
+Run time:      624995 Micro seconds
+Num Play-outs: 34799
+Run time:      605028 Micro seconds
+Num Play-outs: 33783
+Run time:      614203 Micro seconds
+Num Play-outs: 32162
+Run time:      590420 Micro seconds
+Num Play-outs: 30944
+Run time:      577017 Micro seconds
+Num Play-outs: 29423
+Run time:      549086 Micro seconds
+Num Play-outs: 28134
+Run time:      522755 Micro seconds
+Num Play-outs: 26597
+Run time:      488092 Micro seconds
+Num Play-outs: 25198
+Run time:      457952 Micro seconds
+Num Play-outs: 23773
+Run time:      457710 Micro seconds
+Num Play-outs: 22296
+Run time:      431652 Micro seconds
+Num Play-outs: 21252
+Run time:      421259 Micro seconds
+Num Play-outs: 19755
+Run time:      393448 Micro seconds
+Num Play-outs: 18478
+Run time:      367215 Micro seconds
+Num Play-outs: 16925
+Run time:      342182 Micro seconds
+Num Play-outs: 15433
+Run time:      307625 Micro seconds
+Num Play-outs: 14023
+Run time:      264325 Micro seconds
+Num Play-outs: 12960
+Run time:      270613 Micro seconds
+Num Play-outs: 11598
+Run time:      232828 Micro seconds
+Num Play-outs: 10189
+Run time:      203533 Micro seconds
+Num Play-outs: 8813
+Run time:      170745 Micro seconds
+Num Play-outs: 7556
+Run time:      145468 Micro seconds
+Num Play-outs: 6176
+Run time:      117008 Micro seconds
+Num Play-outs: 4601
+Run time:      83649 Micro seconds
+Num Play-outs: 3079
+Run time:      53587 Micro seconds
+Num Play-outs: 1677
+Run time:      27033 Micro seconds
+White: 29 Black: 33
+Winner->BLACK, val:    4
+
+Num Play-outs: 40388
+Run time:      660704 Micro seconds
+Num Play-outs: 39334
+Run time:      684045 Micro seconds
+Num Play-outs: 37764
+Run time:      670044 Micro seconds
+Num Play-outs: 36245
+Run time:      653262 Micro seconds
+Num Play-outs: 35026
+Run time:      643201 Micro seconds
+Num Play-outs: 33774
+Run time:      648652 Micro seconds
+Num Play-outs: 32283
+Run time:      624048 Micro seconds
+Num Play-outs: 30889
+Run time:      598201 Micro seconds
+Num Play-outs: 29547
+Run time:      578108 Micro seconds
+Num Play-outs: 27957
+Run time:      547958 Micro seconds
+Num Play-outs: 26577
+Run time:      513406 Micro seconds
+Num Play-outs: 25032
+Run time:      486703 Micro seconds
+Num Play-outs: 23912
+Run time:      485936 Micro seconds
+Num Play-outs: 22409
+Run time:      460201 Micro seconds
+Num Play-outs: 21188
+Run time:      430263 Micro seconds
+Num Play-outs: 19418
+Run time:      381250 Micro seconds
+Num Play-outs: 18249
+Run time:      363418 Micro seconds
+Num Play-outs: 16835
+Run time:      357977 Micro seconds
+Num Play-outs: 15588
+Run time:      343416 Micro seconds
+Num Play-outs: 14250
+Run time:      305564 Micro seconds
+Num Play-outs: 12930
+Run time:      264315 Micro seconds
+Num Play-outs: 11630
+Run time:      240856 Micro seconds
+Num Play-outs: 10201
+Run time:      207849 Micro seconds
+Num Play-outs: 8589
+Run time:      173869 Micro seconds
+Num Play-outs: 7039
+Run time:      140083 Micro seconds
+Num Play-outs: 6136
+Run time:      121434 Micro seconds
+Num Play-outs: 4551
+Run time:      83796 Micro seconds
+Num Play-outs: 2356
+Run time:      46985 Micro seconds
+White: 30 Black: 30
+Tie, val:               0
+
+Num Play-outs: 40630
+Run time:      683181 Micro seconds
+Num Play-outs: 39266
+Run time:      696632 Micro seconds
+Num Play-outs: 37564
+Run time:      668914 Micro seconds
+Num Play-outs: 36140
+Run time:      659828 Micro seconds
+Num Play-outs: 35033
+Run time:      664460 Micro seconds
+Num Play-outs: 33741
+Run time:      643866 Micro seconds
+Num Play-outs: 32393
+Run time:      629947 Micro seconds
+Num Play-outs: 30941
+Run time:      613683 Micro seconds
+Num Play-outs: 27954
+Run time:      566123 Micro seconds
+Num Play-outs: 28182
+Run time:      587750 Micro seconds
+Num Play-outs: 26827
+Run time:      561582 Micro seconds
+Num Play-outs: 25524
+Run time:      530833 Micro seconds
+Num Play-outs: 24079
+Run time:      513382 Micro seconds
+Num Play-outs: 22686
+Run time:      459755 Micro seconds
+Num Play-outs: 21270
+Run time:      445358 Micro seconds
+Num Play-outs: 19905
+Run time:      393961 Micro seconds
+Num Play-outs: 18491
+Run time:      384185 Micro seconds
+Num Play-outs: 16969
+Run time:      348969 Micro seconds
+Num Play-outs: 15676
+Run time:      313011 Micro seconds
+Num Play-outs: 14324
+Run time:      293854 Micro seconds
+Num Play-outs: 12916
+Run time:      257582 Micro seconds
+Num Play-outs: 11507
+Run time:      232323 Micro seconds
+Num Play-outs: 10212
+Run time:      205607 Micro seconds
+Num Play-outs: 8545
+Run time:      167361 Micro seconds
+Num Play-outs: 6485
+Run time:      125348 Micro seconds
+Num Play-outs: 5396
+Run time:      100587 Micro seconds
+Num Play-outs: 4555
+Run time:      80701 Micro seconds
+Num Play-outs: 3158
+Run time:      55907 Micro seconds
+Num Play-outs: 2291
+Run time:      35932 Micro seconds
+Num Play-outs: 1402
+Run time:      21471 Micro seconds
+White: 43 Black: 21
+Winner->WHITE, val:    -22
+
+Num Play-outs: 40482
+Run time:      687082 Micro seconds
+Num Play-outs: 39217
+Run time:      697323 Micro seconds
+Num Play-outs: 37806
+Run time:      699283 Micro seconds
+Num Play-outs: 36487
+Run time:      683071 Micro seconds
+Num Play-outs: 34995
+Run time:      659725 Micro seconds
+Num Play-outs: 33895
+Run time:      656159 Micro seconds
+Num Play-outs: 32426
+Run time:      643420 Micro seconds
+Num Play-outs: 31028
+Run time:      631851 Micro seconds
+Num Play-outs: 29579
+Run time:      606441 Micro seconds
+Num Play-outs: 28063
+Run time:      560488 Micro seconds
+Num Play-outs: 26989
+Run time:      550847 Micro seconds
+Num Play-outs: 25479
+Run time:      520633 Micro seconds
+Num Play-outs: 24050
+Run time:      493171 Micro seconds
+Num Play-outs: 22528
+Run time:      463228 Micro seconds
+Num Play-outs: 21112
+Run time:      426328 Micro seconds
+Num Play-outs: 19678
+Run time:      391163 Micro seconds
+Num Play-outs: 18405
+Run time:      363579 Micro seconds
+Num Play-outs: 16881
+Run time:      335236 Micro seconds
+Num Play-outs: 15133
+Run time:      291868 Micro seconds
+Num Play-outs: 13632
+Run time:      256967 Micro seconds
+Num Play-outs: 12643
+Run time:      233431 Micro seconds
+Num Play-outs: 10929
+Run time:      198588 Micro seconds
+Num Play-outs: 9568
+Run time:      180511 Micro seconds
+Num Play-outs: 8421
+Run time:      158779 Micro seconds
+Num Play-outs: 7347
+Run time:      130804 Micro seconds
+Num Play-outs: 6018
+Run time:      103084 Micro seconds
+Num Play-outs: 5038
+Run time:      79149 Micro seconds
+Num Play-outs: 3463
+Run time:      59223 Micro seconds
+Num Play-outs: 1774
+Run time:      32809 Micro seconds
+Num Play-outs: 701
+Run time:      14579 Micro seconds
+White: 27 Black: 36
+Winner->BLACK, val:    9
+
+Num Play-outs: 40374
+Run time:      685823 Micro seconds
+Num Play-outs: 39176
+Run time:      711009 Micro seconds
+Num Play-outs: 37534
+Run time:      678212 Micro seconds
+Num Play-outs: 36418
+Run time:      694166 Micro seconds
+Num Play-outs: 35160
+Run time:      696379 Micro seconds
+Num Play-outs: 33670
+Run time:      658104 Micro seconds
+Num Play-outs: 32603
+Run time:      646017 Micro seconds
+Num Play-outs: 31201
+Run time:      593149 Micro seconds
+Num Play-outs: 29634
+Run time:      612875 Micro seconds
+Num Play-outs: 28331
+Run time:      588301 Micro seconds
+Num Play-outs: 26885
+Run time:      563639 Micro seconds
+Num Play-outs: 25503
+Run time:      542174 Micro seconds
+Num Play-outs: 24182
+Run time:      516561 Micro seconds
+Num Play-outs: 22750
+Run time:      466275 Micro seconds
+Num Play-outs: 21129
+Run time:      454552 Micro seconds
+Num Play-outs: 19783
+Run time:      402742 Micro seconds
+Num Play-outs: 18426
+Run time:      403366 Micro seconds
+Num Play-outs: 17033
+Run time:      397619 Micro seconds
+Num Play-outs: 15615
+Run time:      331162 Micro seconds
+Num Play-outs: 14323
+Run time:      295748 Micro seconds
+Num Play-outs: 12968
+Run time:      268114 Micro seconds
+Num Play-outs: 11589
+Run time:      250462 Micro seconds
+Num Play-outs: 10162
+Run time:      188335 Micro seconds
+Num Play-outs: 8659
+Run time:      163683 Micro seconds
+Num Play-outs: 7437
+Run time:      139280 Micro seconds
+Num Play-outs: 5745
+Run time:      107546 Micro seconds
+Num Play-outs: 4437
+Run time:      72206 Micro seconds
+Num Play-outs: 3238
+Run time:      54550 Micro seconds
+Num Play-outs: 2336
+Run time:      45173 Micro seconds
+Num Play-outs: 1038
+Run time:      22249 Micro seconds
+White: 21 Black: 42
+Winner->BLACK, val:    21
+Num Play-outs: 40617
+Run time:      638508 Micro seconds
+Num Play-outs: 39190
+Run time:      612033 Micro seconds
+Num Play-outs: 37786
+Run time:      594475 Micro seconds
+Num Play-outs: 36656
+Run time:      592148 Micro seconds
+Num Play-outs: 35227
+Run time:      585555 Micro seconds
+Num Play-outs: 33752
+Run time:      574939 Micro seconds
+Num Play-outs: 32356
+Run time:      563223 Micro seconds
+Num Play-outs: 31159
+Run time:      550250 Micro seconds
+Num Play-outs: 29702
+Run time:      533800 Micro seconds
+Num Play-outs: 28386
+Run time:      505835 Micro seconds
+Num Play-outs: 26972
+Run time:      480985 Micro seconds
+Num Play-outs: 25564
+Run time:      474697 Micro seconds
+Num Play-outs: 24163
+Run time:      429728 Micro seconds
+Num Play-outs: 22765
+Run time:      416860 Micro seconds
+Num Play-outs: 21145
+Run time:      385844 Micro seconds
+Num Play-outs: 19736
+Run time:      361909 Micro seconds
+Num Play-outs: 18020
+Run time:      329454 Micro seconds
+Num Play-outs: 17167
+Run time:      333506 Micro seconds
+Num Play-outs: 15665
+Run time:      281590 Micro seconds
+Num Play-outs: 14356
+Run time:      265811 Micro seconds
+Num Play-outs: 13048
+Run time:      238156 Micro seconds
+Num Play-outs: 11683
+Run time:      209359 Micro seconds
+Num Play-outs: 10005
+Run time:      185936 Micro seconds
+Num Play-outs: 8457
+Run time:      153181 Micro seconds
+Num Play-outs: 6777
+Run time:      114975 Micro seconds
+Num Play-outs: 5652
+Run time:      94915 Micro seconds
+Num Play-outs: 4175
+Run time:      64694 Micro seconds
+Num Play-outs: 2038
+Run time:      34840 Micro seconds
+Num Play-outs: 2095
+Run time:      29362 Micro seconds
+Num Play-outs: 1050
+Run time:      17523 Micro seconds
+White: 35 Black: 29
+Winner->WHITE, val:    -6
+
+Num Play-outs: 40470
+Run time:      640435 Micro seconds
+Num Play-outs: 39362
+Run time:      612612 Micro seconds
+Num Play-outs: 37718
+Run time:      605384 Micro seconds
+Num Play-outs: 36392
+Run time:      584936 Micro seconds
+Num Play-outs: 35190
+Run time:      579755 Micro seconds
+Num Play-outs: 33696
+Run time:      572642 Micro seconds
+Num Play-outs: 32313
+Run time:      557030 Micro seconds
+Num Play-outs: 30823
+Run time:      544894 Micro seconds
+Num Play-outs: 29238
+Run time:      536977 Micro seconds
+Num Play-outs: 27894
+Run time:      503980 Micro seconds
+Num Play-outs: 26551
+Run time:      486419 Micro seconds
+Num Play-outs: 25062
+Run time:      452067 Micro seconds
+Num Play-outs: 23487
+Run time:      432252 Micro seconds
+Num Play-outs: 22179
+Run time:      415506 Micro seconds
+Num Play-outs: 21008
+Run time:      401217 Micro seconds
+Num Play-outs: 19488
+Run time:      359077 Micro seconds
+Num Play-outs: 18144
+Run time:      329516 Micro seconds
+Num Play-outs: 16508
+Run time:      303005 Micro seconds
+Num Play-outs: 15260
+Run time:      269398 Micro seconds
+Num Play-outs: 13867
+Run time:      238997 Micro seconds
+Num Play-outs: 12751
+Run time:      234239 Micro seconds
+Num Play-outs: 11526
+Run time:      210587 Micro seconds
+Num Play-outs: 9975
+Run time:      180000 Micro seconds
+Num Play-outs: 8777
+Run time:      154255 Micro seconds
+Num Play-outs: 7349
+Run time:      134772 Micro seconds
+Num Play-outs: 5849
+Run time:      100446 Micro seconds
+Num Play-outs: 4593
+Run time:      88225 Micro seconds
+Num Play-outs: 3676
+Run time:      64066 Micro seconds
+Num Play-outs: 2174
+Run time:      37063 Micro seconds
+Num Play-outs: 701
+Run time:      13641 Micro seconds
+White: 21 Black: 42
+Winner->BLACK, val:    21
+
+Num Play-outs: 40526
+Run time:      634906 Micro seconds
+Num Play-outs: 38936
+Run time:      674659 Micro seconds
+Num Play-outs: 37813
+Run time:      599073 Micro seconds
+Num Play-outs: 36519
+Run time:      596478 Micro seconds
+Num Play-outs: 34909
+Run time:      576957 Micro seconds
+Num Play-outs: 33539
+Run time:      565359 Micro seconds
+Num Play-outs: 32265
+Run time:      544602 Micro seconds
+Num Play-outs: 30913
+Run time:      546534 Micro seconds
+Num Play-outs: 29517
+Run time:      514080 Micro seconds
+Num Play-outs: 28064
+Run time:      488739 Micro seconds
+Num Play-outs: 26578
+Run time:      484121 Micro seconds
+Num Play-outs: 25110
+Run time:      462210 Micro seconds
+Num Play-outs: 23809
+Run time:      470849 Micro seconds
+Num Play-outs: 22492
+Run time:      419944 Micro seconds
+Num Play-outs: 21182
+Run time:      387917 Micro seconds
+Num Play-outs: 19637
+Run time:      361730 Micro seconds
+Num Play-outs: 18165
+Run time:      322441 Micro seconds
+Num Play-outs: 16715
+Run time:      294594 Micro seconds
+Num Play-outs: 15345
+Run time:      250698 Micro seconds
+Num Play-outs: 14064
+Run time:      230280 Micro seconds
+Num Play-outs: 12692
+Run time:      216765 Micro seconds
+Num Play-outs: 11312
+Run time:      201828 Micro seconds
+Num Play-outs: 9972
+Run time:      170517 Micro seconds
+Num Play-outs: 8728
+Run time:      151061 Micro seconds
+Num Play-outs: 7042
+Run time:      121951 Micro seconds
+Num Play-outs: 5331
+Run time:      81650 Micro seconds
+Num Play-outs: 4059
+Run time:      62739 Micro seconds
+Num Play-outs: 3307
+Run time:      50829 Micro seconds
+Num Play-outs: 1402
+Run time:      23066 Micro seconds
+White: 51 Black: 11
+Winner->WHITE, val:    -40
+
+Num Play-outs: 40291
+Run time:      630381 Micro seconds
+Num Play-outs: 38868
+Run time:      612794 Micro seconds
+Num Play-outs: 36625
+Run time:      562907 Micro seconds
+Num Play-outs: 35611
+Run time:      554035 Micro seconds
+Num Play-outs: 34499
+Run time:      580021 Micro seconds
+Num Play-outs: 33509
+Run time:      602885 Micro seconds
+Num Play-outs: 32238
+Run time:      545383 Micro seconds
+Num Play-outs: 30829
+Run time:      516603 Micro seconds
+Num Play-outs: 29537
+Run time:      502828 Micro seconds
+Num Play-outs: 28156
+Run time:      488317 Micro seconds
+Num Play-outs: 26655
+Run time:      553637 Micro seconds
+Num Play-outs: 25333
+Run time:      510132 Micro seconds
+Num Play-outs: 23697
+Run time:      464658 Micro seconds
+Num Play-outs: 22421
+Run time:      455400 Micro seconds
+Num Play-outs: 20833
+Run time:      389095 Micro seconds
+Num Play-outs: 19605
+Run time:      353411 Micro seconds
+Num Play-outs: 18342
+Run time:      353567 Micro seconds
+Num Play-outs: 17034
+Run time:      380696 Micro seconds
+Num Play-outs: 15655
+Run time:      332427 Micro seconds
+Num Play-outs: 14280
+Run time:      309665 Micro seconds
+Num Play-outs: 13004
+Run time:      276987 Micro seconds
+Num Play-outs: 11656
+Run time:      253949 Micro seconds
+Num Play-outs: 10171
+Run time:      230124 Micro seconds
+Num Play-outs: 8442
+Run time:      162995 Micro seconds
+Num Play-outs: 6980
+Run time:      122567 Micro seconds
+Num Play-outs: 6298
+Run time:      106933 Micro seconds
+Num Play-outs: 4813
+Run time:      80092 Micro seconds
+Num Play-outs: 3602
+Run time:      71583 Micro seconds
+Num Play-outs: 2541
+Run time:      42974 Micro seconds
+Num Play-outs: 1034
+Run time:      21319 Micro seconds
+White: 24 Black: 39
+Winner->BLACK, val:    15
+
+Num Play-outs: 40540
+Run time:      635479 Micro seconds
+Num Play-outs: 39313
+Run time:      616045 Micro seconds
+Num Play-outs: 37682
+Run time:      604135 Micro seconds
+Num Play-outs: 36516
+Run time:      578418 Micro seconds
+Num Play-outs: 35033
+Run time:      556413 Micro seconds
+Num Play-outs: 33567
+Run time:      544477 Micro seconds
+Num Play-outs: 32284
+Run time:      536754 Micro seconds
+Num Play-outs: 30854
+Run time:      521467 Micro seconds
+Num Play-outs: 29711
+Run time:      515430 Micro seconds
+Num Play-outs: 28257
+Run time:      498098 Micro seconds
+Num Play-outs: 26850
+Run time:      489614 Micro seconds
+Num Play-outs: 25453
+Run time:      460723 Micro seconds
+Num Play-outs: 24112
+Run time:      445624 Micro seconds
+Num Play-outs: 22716
+Run time:      417553 Micro seconds
+Num Play-outs: 21369
+Run time:      396761 Micro seconds
+Num Play-outs: 20089
+Run time:      369362 Micro seconds
+Num Play-outs: 18644
+Run time:      340263 Micro seconds
+Num Play-outs: 17305
+Run time:      307320 Micro seconds
+Num Play-outs: 15727
+Run time:      287911 Micro seconds
+Num Play-outs: 14465
+Run time:      265029 Micro seconds
+Num Play-outs: 13014
+Run time:      234587 Micro seconds
+Num Play-outs: 11767
+Run time:      205395 Micro seconds
+Num Play-outs: 10419
+Run time:      182740 Micro seconds
+Num Play-outs: 9061
+Run time:      157290 Micro seconds
+Num Play-outs: 7506
+Run time:      127606 Micro seconds
+Num Play-outs: 6287
+Run time:      100215 Micro seconds
+Num Play-outs: 4896
+Run time:      79440 Micro seconds
+Num Play-outs: 3663
+Run time:      58124 Micro seconds
+Num Play-outs: 2614
+Run time:      38843 Micro seconds
+Num Play-outs: 1402
+Run time:      20717 Micro seconds
+White: 26 Black: 38
+Winner->BLACK, val:    12
+

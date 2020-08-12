@@ -3,6 +3,7 @@
 #include <ctime>
 #include "othello.h"
 #include <algorithm>
+#include <chrono>
 #include "Node.h"
 #define BLACK 0
 #define WHITE 1
@@ -22,7 +23,11 @@ int main(int argc, char const *argv[])
     while (board->isTerminus() == false){
         string current_turn = board->BoardState.get_turn();
         if(current_turn == "black"){
+            auto current_time = std::chrono::high_resolution_clock::now();
             board->nodeExpansion();
+            auto end_time = std::chrono::high_resolution_clock::now();
+            auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end_time - current_time ).count();
+            cout << "Run time:      " << duration << " Micro seconds" << endl;
             board->makeOptimalMove();
         }
         else if(current_turn == "white"){
@@ -37,6 +42,17 @@ int main(int argc, char const *argv[])
         counter++;
     }
     board->BoardState.end_score();
+    double Value = board->BoardState.rolloutValue();
+    if(Value > 0){
+        cout << "Winner->BLACK, val:    " << Value << endl;
+    }
+    else if (Value < 0){
+        cout << "Winner->WHITE, val:    " << Value << endl;
+    }
+    else if (Value == 0){
+        cout <<"Tie, val:               " << Value << endl;
+    }
+    cout << endl;
 
 //    cout << "-----------INITIAL BOARD-------------" << endl;
 //    Board.print_board();

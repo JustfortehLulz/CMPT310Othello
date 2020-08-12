@@ -97,11 +97,10 @@ void Node::makeOptimalMove(){
 
 
 void Node::nodeExpansion(){
-    int Param = 400;
+    int Param = 700;
     int counter = 0;
     srand(time(NULL));
-    time_t start_time;
-    start_time = time(NULL);
+    int NumberOfPlayouts = 0;
     while(counter <= Param){
         int UCB1choice = getUCB1Index();
         int randIndex;
@@ -115,6 +114,7 @@ void Node::nodeExpansion(){
                 if (validMoves.size() != 0 ){
                     randIndex = rand() % validMoves.size();
                     newBoard->play_move(validMoves[randIndex]);
+                    NumberOfPlayouts++;
                 }
 //                if(difftime(start_time,time(NULL) >= timeParam)){
 //                    break;
@@ -136,8 +136,8 @@ void Node::nodeExpansion(){
             spawnChildren();
         }
         counter++;
-//        BoardState.end_score();
     }
+    cout << "Num Play-outs: " << NumberOfPlayouts << endl;
 }
 
 void Node::spawnChildren(){
