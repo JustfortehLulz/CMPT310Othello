@@ -39,8 +39,6 @@ void Node::incrementNumVisits() {
     NumVisits++;
 }
 
-//Node Node::TraverseToParent(Node ChildNode) {}
-
 double Node::UCB1(){
     if (getNumVisits() == 0){return (float)INT_MAX;}
     double UCB1 = ExploitationVal() + ExplorationVal();
@@ -74,12 +72,15 @@ int Node::getUCB1Index() {
     }
     return maxIndex;
 }
+int Node::rolloutValue(){
+    return BoardState.black_score() - BoardState.white_score();
+}
 
 void Node::nodeExpansion(){
     srand(time(NULL));
     int UCB1choice = getUCB1Index();
     int randIndex;
-    if(ChildNodes.at(UCB1choice)->getNumVisits() == 0){
+    if(ChildNodes.size() > 0 && ChildNodes.at(UCB1choice)->getNumVisits() == 0){ // Roll out
         Node *newNode = new Node(*ChildNodes.at(UCB1choice));
         while (newNode->isTerminus() == false){
             vector<int> validMoves = newNode->BoardState.current_legal_moves();
@@ -88,9 +89,17 @@ void Node::nodeExpansion(){
             //newNode->BoardState.print_board();
             //newNode->BoardState.end_score();
         }
+        int value = rolloutValue();
+        Node nodeCopy = *this;
+        while(nodeCopy.ParentNodePtr != NULL){  //Backpropogation
+            nodeCopy.updateEval(value);
+            nodeCopy = *nodeCopy.ParentNodePtr;
+        }
+        nodeCopy.updateEval(value);
+        incrementNumVisits();
     }
-    else{
-
+    else{ // Expand nodes
+        spawnChildren();
     }
 }
 

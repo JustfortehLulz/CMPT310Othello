@@ -12,6 +12,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    Node *rootNode = new Node();
+    Node *ChildNode = new Node(*rootNode);
+    ChildNode->nodeExpansion();
     OthelloBoard TestNodeBoard;
     bool P1moves = true;
     bool P2moves = true;
@@ -20,6 +23,8 @@ int main(int argc, char const *argv[])
 
     srand(time(NULL));
     OthelloBoard Board;
+
+    while ()
 
     cout << "-----------INITIAL BOARD-------------" << endl;
     Board.print_board();
@@ -64,19 +69,10 @@ int main(int argc, char const *argv[])
                 }
                 cout << endl;
                 if (!(moves.empty())) {
-                    int move = 0;
-                    //cin >> move;
                     randIndex = rand() % moves.size();
                     cout << endl;
                     cout << "PLAYING THIS MOVE: " << moves[randIndex] << endl;
                     Board.play_move(moves[randIndex]);
-                    /*
-                     * Find the index with the value move in the moves vector.
-                     */
-                     //vector<int>::iterator value=find(moves.begin(), moves.end(), move);
-                     //int index = distance(moves.begin(), value);
-                     //cout << "PLAYING THIS MOVE: " << move << " AT INDEX: "<< index << endl;
-                     //Board.play_move( move);
                     Board.print_board();
                     Board.end_score();
                     P2moves = true;
@@ -112,19 +108,6 @@ int main(int argc, char const *argv[])
     }
     cout << "Test Node: "   << endl;
 
-    Node *rootNode = new Node();
-    Node *ChildNode = new Node(*rootNode);
-    ChildNode->PlayMove(37);
-    cout << "Child node printing now!" << endl;
-    ChildNode->PrintNode();
-    cout << "Root node printing now!" << endl;
-    rootNode->PrintNode();
-    cout << "is ChildNode game terminated? " << ChildNode->isTerminus() << endl;
-    cout << endl;
-    rootNode->spawnChildren();
-    rootNode->printChildren();
-    ChildNode->spawnChildren();
-    ChildNode->nodeExpansion();
 
     return 0;
 }

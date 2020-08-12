@@ -30,6 +30,8 @@ public:
 
     int getUCB1Index();
 
+    int rolloutValue();
+
     void nodeExpansion();
 
     double UCB1();
