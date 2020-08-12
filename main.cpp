@@ -113,10 +113,16 @@ int main(int argc, char const *argv[])
     cout << "Test Node: "   << endl;
 
     Node *rootNode = new Node();
+    Node *ChildNode = new Node(*rootNode);
+    ChildNode->PlayMove(37);
+    cout << "Child node printing now!" << endl;
+    ChildNode->PrintNode();
     cout << "Root node printing now!" << endl;
     rootNode->PrintNode();
-    rootNode->PlayMove(37);
-    rootNode->PrintNode();
+    cout << "is ChildNode game terminated? " << ChildNode->isTerminus() << endl;
+    cout << endl;
+    rootNode->spawnChildren();
+    rootNode->printChildren();
 
     return 0;
 }

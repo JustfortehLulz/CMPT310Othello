@@ -10,7 +10,7 @@ public:
     int Eval;                   //Value of the node
     int NumVisits;              //Number of times the node has been visited
     Node* ParentNodePtr;
-    vector<Node*> ChildNodes(); //Vector of Child Nodes from all legal moves on parent node
+    vector<Node*> ChildNodes; //Vector of Child Nodes from all legal moves on parent node
 
     //initialization.
     Node();
@@ -34,6 +34,10 @@ public:
     Node TraverseToParent(Node ChildNode);
 
     int TraverseToChild(Node ParentNode);
+
+    void spawnChildren();
+
+    void printChildren();
 
     /* Check if the game has reached end game state.*/
     bool isTerminus();

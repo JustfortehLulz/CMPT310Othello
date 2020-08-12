@@ -44,8 +44,22 @@ Node Node::TraverseToParent(Node ChildNode) {
 int Node::TraverseToChild(Node ParentNode) {
     //use ChildNode pointer Vector
     //ChildNodes = ParentNode.ChildNodes;
-
 }
-bool Node::isTerminus(){
 
+void Node::spawnChildren(){
+    vector<int> ValidMoves = BoardState.current_legal_moves();
+    for (auto & move : ValidMoves){
+        Node* newNode = new Node(*this);
+        newNode->PlayMove(move);
+        ChildNodes.push_back(newNode);
+    }
+}
+void Node::printChildren(){
+    for (auto & child : ChildNodes){
+        child->PrintNode();
+    }
+}
+
+bool Node::isTerminus(){
+    return not BoardState.is_legal_moves();
 }
