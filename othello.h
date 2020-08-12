@@ -6,13 +6,14 @@ using namespace std;
 
 class OthelloBoard
 {
-public:
+private:
 	int boardArr[64];
 	int movenum;
 
-	OthelloBoard();
+public:
+	OthelloBoard(); // Default Constructor for new board.
 
-	OthelloBoard(const OthelloBoard& Board);
+	OthelloBoard(const OthelloBoard &Board); // Deep Copy Constructor
 
 	void print_board();
 
@@ -23,26 +24,23 @@ public:
 	vector<int> check_legal_moves(int current_player);
 	vector<int> current_legal_moves();
 
-    int rolloutValue();
+	int rolloutValue();
 
-    vector<int> black_legal_moves();
+	vector<int> black_legal_moves();
 
-    vector<int> white_legal_moves();
+	vector<int> white_legal_moves();
 
-    bool is_legal_moves();
+	bool is_legal_moves();
 
 	void play_move(int tile);
 
-	void print_array();
-
 	void print_score();
 
-	void end_score();
+	void print_end_score();
 
 	int white_score();
 
 	int black_score();
 
 	string calculate_winner();
-
 };
