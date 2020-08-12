@@ -5,12 +5,13 @@
 
 class Node {
 private:
-    OthelloBoard BoardState;
 public:
-    int Eval;                 //Value of the node
-    int NumVisits;            //Number of times the node has been visited
+    OthelloBoard BoardState;
+
+    int Eval = 0;               //Value of the node
+    int NumVisits = 0;          //Number of times the node has been visited
     Node* ParentNodePtr;
-    vector<Node*> ChildNodes; //Vector of Child Nodes from all legal moves on parent node
+    vector<Node*> ChildNodes;   //Vector of Child Nodes from all legal moves on parent node
 
     //initialization.
     Node();
@@ -30,7 +31,7 @@ public:
 
     int getUCB1Index();
 
-    int rolloutValue();
+    void makeOptimalMove();
 
     void nodeExpansion();
 

@@ -103,9 +103,11 @@ bool OthelloBoard::is_legal_moves() {
     int num_white_moves = white_legal_moves().size();
     int num_black_moves = black_legal_moves().size();
 
-    return (num_black_moves != 0 || num_white_moves != 0);
+    return (num_black_moves != 0 && num_white_moves != 0);
 }
-
+int OthelloBoard::rolloutValue(){
+    return black_score()-white_score();
+}
 vector<int> OthelloBoard::current_legal_moves()
 {
     string current_turn = this->get_turn();

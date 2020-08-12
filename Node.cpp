@@ -11,7 +11,6 @@ Node::Node() {
 }
 Node::Node(Node &ParentNode) {
     ParentNodePtr = &ParentNode;
-
     BoardState = ParentNode.BoardState;  // new instance of the board with the requested move done.
 }
 
@@ -60,8 +59,10 @@ double Node::ExplorationVal(){
 
 }
 int Node::getUCB1Index() {
-    if (ChildNodes.front() == NULL){return NULL;}
     int maxIndex = 0;
+    if (ChildNodes.size() == 0){
+        spawnChildren();
+    }
     double maxValue = ChildNodes.front()->UCB1();
     for(int i = 0 ; i < ChildNodes.size();i++ ){
         double currentUCB = ChildNodes.at(i)->UCB1();
@@ -72,34 +73,54 @@ int Node::getUCB1Index() {
     }
     return maxIndex;
 }
-int Node::rolloutValue(){
-    return BoardState.black_score() - BoardState.white_score();
+void Node::makeOptimalMove(){
+    int maxIndex = getUCB1Index();
+    vector<int> ValidMoves = BoardState.current_legal_moves();
+    BoardState.play_move(ValidMoves.at(maxIndex));
 }
 
+
 void Node::nodeExpansion(){
+    int Param = 100;
+    int counter = 0;
     srand(time(NULL));
-    int UCB1choice = getUCB1Index();
-    int randIndex;
-    if(ChildNodes.size() > 0 && ChildNodes.at(UCB1choice)->getNumVisits() == 0){ // Roll out
-        Node *newNode = new Node(*ChildNodes.at(UCB1choice));
-        while (newNode->isTerminus() == false){
-            vector<int> validMoves = newNode->BoardState.current_legal_moves();
-            randIndex = rand() % validMoves.size();
-            newNode->BoardState.play_move(validMoves[randIndex]);
-            //newNode->BoardState.print_board();
-            //newNode->BoardState.end_score();
-        }
-        int value = rolloutValue();
-        Node nodeCopy = *this;
-        while(nodeCopy.ParentNodePtr != NULL){  //Backpropogation
+    time_t start_time;
+    start_time = time(NULL);
+    while(counter <= Param){
+        int UCB1choice = getUCB1Index();
+        int randIndex;
+        int value;
+        if(ChildNodes.size() > 0 && ChildNodes.at(UCB1choice)->getNumVisits() == 0){ // Roll out
+            OthelloBoard *newBoard = new OthelloBoard(BoardState);
+
+            //Node *newNode = new Node(*ChildNodes.at(UCB1choice));
+            while (newBoard->is_legal_moves() == true){
+                vector<int> validMoves = newBoard->current_legal_moves();
+                if (validMoves.size() != 0 ){
+                    randIndex = rand() % validMoves.size();
+                    newBoard->play_move(validMoves[randIndex]);
+                }
+//                if(difftime(start_time,time(NULL) >= timeParam)){
+//                    break;
+//                }
+                //newNode->BoardState.print_board();
+                //newNode->BoardState.end_score();
+                value = newBoard->rolloutValue();
+            }
+            Node nodeCopy = *this;
+            while(nodeCopy.ParentNodePtr != NULL){  //Backpropogation
+                nodeCopy.updateEval(value);
+                nodeCopy.incrementNumVisits();
+                nodeCopy = *nodeCopy.ParentNodePtr;
+            }
             nodeCopy.updateEval(value);
-            nodeCopy = *nodeCopy.ParentNodePtr;
+            incrementNumVisits();
         }
-        nodeCopy.updateEval(value);
-        incrementNumVisits();
-    }
-    else{ // Expand nodes
-        spawnChildren();
+        else{ // Expand nodes
+            spawnChildren();
+        }
+        counter++;
+//        BoardState.end_score();
     }
 }
 

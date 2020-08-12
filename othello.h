@@ -23,13 +23,13 @@ public:
 	vector<int> check_legal_moves(int current_player);
 	vector<int> current_legal_moves();
 
+    int rolloutValue();
 
+    vector<int> black_legal_moves();
 
-	vector<int> black_legal_moves();
-	vector<int> white_legal_moves();
-	bool is_legal_moves();
+    vector<int> white_legal_moves();
 
-
+    bool is_legal_moves();
 
 	void play_move(int tile);
 
