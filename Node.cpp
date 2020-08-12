@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Node::Node(){
+Node::Node() {
     ParentNodePtr = NULL;
     BoardState = *new OthelloBoard();
 }
@@ -11,7 +11,12 @@ Node::Node(Node &ParentNode) {
     ParentNodePtr = &ParentNode;
 
     BoardState = ParentNode.BoardState;  // new instance of the board with the requested move done.
-    //vector<int> moves = BoardState.check_legal_moves();
+}
+
+Node::Node(OthelloBoard &StartState) {
+    ParentNodePtr = NULL;
+
+    BoardState = StartState;  // new instance of the board with the requested move done.
 }
 void Node::PlayMove(int index) {
     BoardState.play_move(index);
@@ -19,10 +24,10 @@ void Node::PlayMove(int index) {
 void Node::PrintNode() {
     BoardState.print_board();
 }
-double Node::getEval(){
+double Node::getEval() {
     return Eval;
 }
-int Node::getNumVisits(){
+int Node::getNumVisits() {
     return NumVisits;
 }
 void Node::updateEval(double value) {
@@ -31,7 +36,7 @@ void Node::updateEval(double value) {
 void Node::incrementNumVisits() {
     NumVisits++;
 }
-Node Node::searchChildNodes(vector<Node*> ChildNodes, int ChildNodePointer){
+Node Node::searchChildNodes(vector<Node*> ChildNodes, int ChildNodePointer) {
 
     //return *NodePointer;
 }
@@ -46,6 +51,6 @@ int Node::TraverseToChild(Node ParentNode) {
     //ChildNodes = ParentNode.ChildNodes;
 
 }
-bool Node::isTerminus(){
+bool Node::isTerminus() {
 
 }
