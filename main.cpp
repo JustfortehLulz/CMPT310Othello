@@ -112,13 +112,11 @@ int main(int argc, char const *argv[])
     }
     cout << "Test Node: "   << endl;
 
-    Node TestNode(TestNodeBoard);
+    Node *rootNode = new Node();
+    cout << "Root node printing now!" << endl;
+    rootNode->PrintNode();
+    rootNode->PlayMove(37);
+    rootNode->PrintNode();
 
-    TestNode.PlayMove(37);
-    TestNodeBoard.print_board();
-    TestNode.PrintNode();
-
-    cout << !0 << endl;
-    cout << !1 << endl;
     return 0;
 }

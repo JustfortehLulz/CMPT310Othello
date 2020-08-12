@@ -9,11 +9,12 @@ private:
 public:
     int Eval;                   //Value of the node
     int NumVisits;              //Number of times the node has been visited
-    vector<int> moves();          //Vector of legal moves available to player on this node
-    vector<Node*> ChildNodes();   //Vector of Child Nodes from all legal moves on parent node
+    Node* ParentNodePtr;
+    vector<Node*> ChildNodes(); //Vector of Child Nodes from all legal moves on parent node
 
     //initialization.
-    Node(OthelloBoard ParentState);
+    Node();
+    Node(Node &ParentNode);
     void PlayMove(int index);
 
     void PrintNode();

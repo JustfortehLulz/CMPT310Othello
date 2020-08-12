@@ -3,8 +3,14 @@
 
 using namespace std;
 
-Node::Node(OthelloBoard ParentState) {
-    OthelloBoard BoardState = ParentState;  // new instance of the board with the requested move done.
+Node::Node(){
+    ParentNodePtr = NULL;
+    BoardState = *new OthelloBoard();
+}
+Node::Node(Node &ParentNode) {
+    ParentNodePtr = &ParentNode;
+
+    BoardState = ParentNode.BoardState;  // new instance of the board with the requested move done.
     //vector<int> moves = BoardState.check_legal_moves();
 }
 void Node::PlayMove(int index) {
