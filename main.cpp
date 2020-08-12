@@ -123,6 +123,7 @@ int main(int argc, char const *argv[])
     cout << endl;
     rootNode->spawnChildren();
     rootNode->printChildren();
+    ChildNode->nodeExpansion();
 
     return 0;
 }

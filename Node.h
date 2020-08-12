@@ -7,8 +7,8 @@ class Node {
 private:
     OthelloBoard BoardState;
 public:
-    int Eval;                   //Value of the node
-    int NumVisits;              //Number of times the node has been visited
+    int Eval;                 //Value of the node
+    int NumVisits;            //Number of times the node has been visited
     Node* ParentNodePtr;
     vector<Node*> ChildNodes; //Vector of Child Nodes from all legal moves on parent node
 
@@ -31,10 +31,15 @@ public:
     /* Search through the vector of child node pointers and return the specified node from its pointer. */
     Node searchChildNodes(vector<Node*> ChildNodes, int ChildNodePointer);
 
-    /* Tree Traversal Functions */
-    Node TraverseToParent(Node ChildNode);
+    int getUCB1Index();
 
-    int TraverseToChild(Node ParentNode);
+    void nodeExpansion();
+
+    double UCB1();
+
+    double ExploitationVal();
+
+    double ExplorationVal();
 
     void spawnChildren();
 
