@@ -34,19 +34,19 @@ int main(int argc, char const *argv[])
         }
         else if(current_turn == "white"){
             //white makes random moves in this block
-//            moves = board->BoardState.white_legal_moves();
-//            int randIndex = rand() % moves.size();
-//            board->BoardState.play_move(moves.at(randIndex));
+            moves = board->BoardState.white_legal_moves();
+            int randIndex = rand() % moves.size();
+            board->BoardState.play_move(moves.at(randIndex));
 
             //This block of code to run black as AI2
-            cout << endl;
-            cout << "AI 2 Turn." << endl;
-            auto current_time = std::chrono::high_resolution_clock::now();
-            board->nodeExpansion();
-            auto end_time = std::chrono::high_resolution_clock::now();
-            auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end_time - current_time ).count();
-            cout << "Run time:      " << duration << " Micro seconds" << endl;
-            board->makeOptimalRobustMove(); // modified MCTS Algorithm.
+//            cout << endl;
+//            cout << "AI 2 Turn." << endl;
+//            auto current_time = std::chrono::high_resolution_clock::now();
+//            board->nodeExpansion();
+//            auto end_time = std::chrono::high_resolution_clock::now();
+//            auto duration = std::chrono::duration_cast<std::chrono::microseconds>( end_time - current_time ).count();
+//            cout << "Run time:      " << duration << " Micro seconds" << endl;
+//            board->makeOptimalRobustMove(); // modified MCTS Algorithm.
         }
 //        board->BoardState.print_board();
 //        cout << "Board State #: " << counter << endl;
