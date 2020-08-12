@@ -38,10 +38,6 @@ void Node::updateEval(double value) {
 void Node::incrementNumVisits() {
     NumVisits++;
 }
-Node Node::searchChildNodes(vector<Node*> ChildNodes, int ChildNodePointer) {
-
-    //return *NodePointer;
-}
 
 //Node Node::TraverseToParent(Node ChildNode) {}
 
@@ -89,8 +85,8 @@ void Node::nodeExpansion(){
             vector<int> validMoves = newNode->BoardState.current_legal_moves();
             randIndex = rand() % validMoves.size();
             newNode->BoardState.play_move(validMoves[randIndex]);
-            newNode->BoardState.print_board();
-            newNode->BoardState.end_score();
+            //newNode->BoardState.print_board();
+            //newNode->BoardState.end_score();
         }
     }
     else{

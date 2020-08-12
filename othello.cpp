@@ -387,7 +387,7 @@ void OthelloBoard::flip_tile(int tile)
                 if (boardArr[down] == BLACK) {
                     // hit a black piece, time to flip over the white pieces
                     for (auto j = flipPieces.begin(); j != flipPieces.end(); ++j) {
-                        cout << *j << endl;
+                    //    cout << *j << endl;
                         boardArr[*j] = BLACK;
                     }
                 }

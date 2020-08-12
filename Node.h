@@ -28,9 +28,6 @@ public:
 
     void incrementNumVisits();
 
-    /* Search through the vector of child node pointers and return the specified node from its pointer. */
-    Node searchChildNodes(vector<Node*> ChildNodes, int ChildNodePointer);
-
     int getUCB1Index();
 
     void nodeExpansion();
