@@ -1,22 +1,40 @@
 #pragma once
 #include "othello.h"
+#include <vector>
 
 
 class Node {
 private:
     OthelloBoard BoardState;
 public:
-    int Eval;           //Value of the node
-    int NumVisits;      //Number of times the node has been visited
+    int Eval;                   //Value of the node
+    int NumVisits;              //Number of times the node has been visited
+    vector<int> moves();          //Vector of legal moves available to player on this node
+    vector<Node*> ChildNodes();   //Vector of Child Nodes from all legal moves on parent node
 
     //initialization.
     Node(OthelloBoard ParentState);
     void PlayMove(int index);
 
     void PrintNode();
-    int getEval();
+
+    double getEval();
+
     int getNumVisits();
-    void updateEval(int value);
+
+    void updateEval(double value);
+
     void incrementNumVisits();
+
+    /* Search through the vector of child node pointers and return the specified node from its pointer. */
+    Node searchChildNodes(vector<Node*> ChildNodes,int ChildNodePointer);
+
+    /* Tree Traversal Functions */
+    Node TraverseToParent(Node ChildNode);
+
+    int TraverseToChild(Node ParentNode);
+
+    /* Check if the game has reached end game state.*/
+    bool isTerminus();
 };
 
