@@ -74,7 +74,7 @@ double Node::ExplorationVal()
     exp = C * exp;
     return exp;
 }
-int Node::getUCB1Index()
+unsigned int Node::getUCB1Index()
 {
     int maxIndex = 0;
     if (ChildNodes.size() == 0)
@@ -82,7 +82,7 @@ int Node::getUCB1Index()
         spawnChildren();
     }
     double maxValue = ChildNodes.front()->UCB1();
-    for (int i = 0; i < ChildNodes.size(); i++)
+    for (unsigned int i = 0; i < ChildNodes.size(); i++)
     {
         double currentUCB = ChildNodes.at(i)->UCB1();
         if (currentUCB >= maxValue)
@@ -94,21 +94,27 @@ int Node::getUCB1Index()
     return maxIndex;
 }
 
-int Node::getUCB1MaxChildIndex() {
-    int maxIndex = 0;
-    if (ChildNodes.size() == 0){
+unsigned int Node::getUCB1MaxChildIndex()
+{
+    unsigned int maxIndex = 0;
+    if (ChildNodes.size() == 0)
+    {
         spawnChildren();
     }
     double maxValue = ChildNodes.front()->getNumVisits();
-    for(int i = 0 ; i < ChildNodes.size();i++ ){
+    for (unsigned int i = 0; i < ChildNodes.size(); i++)
+    {
         double currentUCB = ChildNodes.at(i)->getNumVisits();
-        if (currentUCB >= maxValue) {
+        if (currentUCB >= maxValue)
+        {
             maxValue = currentUCB;
-            if ((currentUCB && maxValue)!= 0) {
+            if ((currentUCB && maxValue) != 0)
+            {
                 maxIndex = i;
             }
         }
-        if (maxIndex >= BoardState.current_legal_moves().size()){
+        if (maxIndex >= BoardState.current_legal_moves().size())
+        {
             maxIndex = 0;
         }
     }
@@ -130,19 +136,19 @@ void Node::makeOptimalMove()
     int maxIndex = getUCB1Index();
     vector<int> ValidMoves = BoardState.current_legal_moves();
     // NODE CHILD DEBUG CODE
-//
-//    cout << "UCB1 Index: " << getUCB1Index() << " Valid Moves Size: " << ValidMoves.size() << endl;
-//    for (auto &move : ValidMoves)
-//    {
-//        cout << "Valid moves: " << move << endl;
-//    }
-//    for (auto &node : ChildNodes)
-//    {
-//        cout << "Child nodes: UBCB1 val " << node->UCB1() << endl;
-//        cout << "Node Eval: " << node->getEval() << endl;
-//        cout << "Node Num Visits: " << node->NumVisits << endl;
-//    }
-//    cout << getUCB1Index() << endl;
+    //
+    //    cout << "UCB1 Index: " << getUCB1Index() << " Valid Moves Size: " << ValidMoves.size() << endl;
+    //    for (auto &move : ValidMoves)
+    //    {
+    //        cout << "Valid moves: " << move << endl;
+    //    }
+    //    for (auto &node : ChildNodes)
+    //    {
+    //        cout << "Child nodes: UBCB1 val " << node->UCB1() << endl;
+    //        cout << "Node Eval: " << node->getEval() << endl;
+    //        cout << "Node Num Visits: " << node->NumVisits << endl;
+    //    }
+    //    cout << getUCB1Index() << endl;
 
     if (!isIndexInBounds())
     {
@@ -154,10 +160,12 @@ void Node::makeOptimalMove()
     // BoardState = ChildNodes.at(maxIndex)->BoardState;
 }
 
-void Node::makeOptimalRobustMove() {
+void Node::makeOptimalRobustMove()
+{
     int maxChildIndex = getUCB1MaxChildIndex();
     vector<int> ValidMoves = BoardState.current_legal_moves();
-    if (!isIndexInBounds()){
+    if (!isIndexInBounds())
+    {
         cout << "UCB1 Index out of bounds" << endl;
     }
     BoardState.play_move(ValidMoves.at(maxChildIndex));
@@ -192,7 +200,6 @@ void Node::nodeExpansion()
             ChildNodes.at(UCB1choice)->updateEval(value);
             this->incrementNumVisits();
             this->updateEval(value);
-
         }
         counter++;
     }

@@ -2,16 +2,16 @@
 #include "othello.h"
 #include <vector>
 
-
-class Node {
+class Node
+{
 private:
 public:
     OthelloBoard BoardState;
 
-    int Eval = 0;               //Value of the node
-    int NumVisits = 0;          //Number of times the node has been visited
-    Node* ParentNodePtr;
-    vector<Node*> ChildNodes;   //Vector of Child Nodes from all legal moves on parent node
+    int Eval = 0;      //Value of the node
+    int NumVisits = 0; //Number of times the node has been visited
+    Node *ParentNodePtr;
+    vector<Node *> ChildNodes; //Vector of Child Nodes from all legal moves on parent node
 
     //initialization.
     Node();
@@ -29,9 +29,9 @@ public:
 
     void incrementNumVisits();
 
-    int getUCB1Index();
+    unsigned int getUCB1Index();
 
-    int getUCB1MaxChildIndex();
+    unsigned int getUCB1MaxChildIndex();
 
     void makeOptimalMove();
 
@@ -54,4 +54,3 @@ public:
 
     bool isIndexInBounds();
 };
-
