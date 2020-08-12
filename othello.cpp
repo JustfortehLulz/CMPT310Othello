@@ -90,344 +90,205 @@ void OthelloBoard::print_array()
         cout << boardArr[i] << endl;
     }
 }
+vector<int> OthelloBoard::black_legal_moves() {
+    return check_legal_moves(BLACK);
+}
 
-vector<int> OthelloBoard::check_legal_moves()
+vector<int> OthelloBoard::white_legal_moves() {
+    return check_legal_moves(WHITE);
+}
+
+bool OthelloBoard::is_legal_moves() {
+    int num_white_moves = white_legal_moves().size();
+    int num_black_moves = black_legal_moves().size();
+
+    return (num_black_moves != 0 && num_white_moves != 0);
+}
+
+vector<int> OthelloBoard::current_legal_moves()
+{
+    string current_turn = this->get_turn();
+
+    if (current_turn == "black") {
+        return check_legal_moves(BLACK);
+    }
+    else if (current_turn == "white") {
+        return check_legal_moves(WHITE);
+    }
+
+}
+
+vector<int> OthelloBoard::check_legal_moves(int current_player)
 {
     vector<int> legalMoves;
+
+    int player = current_player;
+    int opponent = !player;
     //black pieces turn
-    if (this->get_turn() == "black")
+    for (int i = 0;i < 64;i++)
     {
-        for (int i = 0;i < 64;i++)
+        // find black piece
+        if (boardArr[i] == player)
         {
-            // find black piece
-            if (boardArr[i] == BLACK)
+            // check for white pieces
+            int up = i - 8;
+            int left = i - 1;
+            int down = i + 8;
+            int right = i + 1;
+
+            int down_right = i + 9;
+            int down_left = i + 7;
+            int up_right = i - 7;
+            int up_left = i - 9;
+            // if not on the top row
+            // UP
+            if (i - 8 < 0) {
+            }
+            else {
+                // check up if theres a white piece
+                while (boardArr[up] == opponent) {
+                    // keeps going up until either hits the edge or finds an empty spot
+                    up -= 8;
+                    if (up < 0) {
+                        break;
+                    }
+                    if (boardArr[up] == EMPTY) {
+                        // this is a legal move
+                        if (find(legalMoves.begin(), legalMoves.end(), up) == legalMoves.end()) {
+                            legalMoves.push_back(up);
+                        }
+                    }
+                }
+            }
+            // if not on the left most column
+            // LEFT
+            if (i % 8 == 0) {
+            }
+            else {
+                while (boardArr[left] == opponent) {
+                    left -= 1;
+                    if (left % 8 == 7) {
+                        break;
+                    }
+                    if (boardArr[left] == EMPTY) {
+                        if (find(legalMoves.begin(), legalMoves.end(), left) == legalMoves.end()) {
+                            legalMoves.push_back(left);
+                        }
+
+                    }
+                }
+            }
+            //DOWN
+            if (i >= 55) {
+            }
+            else {
+                // keeps going until there is an empty spot or until the edge
+                while (boardArr[down] == opponent) {
+                    down += 8;
+                    if (down > 63) {
+                        break;
+                    }
+                    if (boardArr[down] == EMPTY) {
+                        if (find(legalMoves.begin(), legalMoves.end(), down) == legalMoves.end()) {
+                            legalMoves.push_back(down);
+                        }
+                    }
+                }
+            }
+            //RIGHT
+            if (i % 8 == 7) {
+            }
+            else {
+                while (boardArr[right] == opponent) {
+                    right += 1;
+                    if (right % 8 == 0) {
+                        break;
+                    }
+                    if (boardArr[right] == EMPTY) {
+                        if (find(legalMoves.begin(), legalMoves.end(), right) == legalMoves.end()) {
+                            legalMoves.push_back(right);
+                        }
+                    }
+                }
+            }
+            //DOWN-RIGHT
+            if (!((i >= 55) || (i % 8 == 7)))
             {
-                // check for white pieces
-                int up = i - 8;
-                int left = i - 1;
-                int down = i + 8;
-                int right = i + 1;
-
-                int down_right = i + 9;
-                int down_left = i + 7;
-                int up_right = i - 7;
-                int up_left = i - 9;
-                // if not on the top row
-                // UP
-                if (i - 8 < 0) {
-                }
-                else {
-                    // check up if theres a white piece
-                    while (boardArr[up] == WHITE) {
-                        // keeps going up until either hits the edge or finds an empty spot
-                        up -= 8;
-                        if (up < 0) {
-                            break;
-                        }
-                        if (boardArr[up] == EMPTY) {
-                            // this is a legal move
-                            if (find(legalMoves.begin(), legalMoves.end(), up) == legalMoves.end()) {
-                                legalMoves.push_back(up);
-                            }
-                        }
-                    }
-                }
-                // if not on the left most column
-                // LEFT
-                if (i % 8 == 0) {
-                }
-                else {
-                    while (boardArr[left] == WHITE) {
-                        left -= 1;
-                        if (left % 8 == 7) {
-                            break;
-                        }
-                        if (boardArr[left] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), left) == legalMoves.end()) {
-                                legalMoves.push_back(left);
-                            }
-
-                        }
-                    }
-                }
-                //DOWN
-                if (i >= 55) {
-                }
-                else {
-                    // keeps going until there is an empty spot or until the edge
-                    while (boardArr[down] == WHITE) {
-                        down += 8;
-                        if (down > 63) {
-                            break;
-                        }
-                        if (boardArr[down] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), down) == legalMoves.end()) {
-                                legalMoves.push_back(down);
-                            }
-                        }
-                    }
-                }
-                //RIGHT
-                if (i % 8 == 7) {
-                }
-                else {
-                    while (boardArr[right] == WHITE) {
-                        right += 1;
-                        if (right % 8 == 0) {
-                            break;
-                        }
-                        if (boardArr[right] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), right) == legalMoves.end()) {
-                                legalMoves.push_back(right);
-                            }
-                        }
-                    }
-                }
-                //DOWN-RIGHT
-                if (!((i >= 55) || (i % 8 == 7)))
+                while (boardArr[down_right] == opponent)
                 {
-                    while (boardArr[down_right] == WHITE)
+                    down_right += 9;
+                    if (down_right > 63 || down_right % 8 == 0)
                     {
-                        down_right += 9;
-                        if (down_right > 63 || down_right % 8 == 0)
+                        break;
+                    }
+                    if (boardArr[down_right] == EMPTY)
+                    {
+                        if (find(legalMoves.begin(), legalMoves.end(), down_right) == legalMoves.end())
                         {
-                            break;
-                        }
-                        if (boardArr[down_right] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), down_right) == legalMoves.end())
-                            {
-                                legalMoves.push_back(down_right);
-                            }
+                            legalMoves.push_back(down_right);
                         }
                     }
                 }
-                //DOWN-LEFT
-                if (i < 55 || i % 8 == 0) {
-                    while (boardArr[down_left] == WHITE) {
-                        down_left += 7;
-                        if (down_left > 63 || down_left % 8 == 7) {
-                            break;
-                        }
-                        if (boardArr[down_left] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), down_left) == legalMoves.end()) {
-                                legalMoves.push_back(down_left);
-                            }
+            }
+            //DOWN-LEFT
+            if (i < 55 || i % 8 == 0) {
+                while (boardArr[down_left] == opponent) {
+                    down_left += 7;
+                    if (down_left > 63 || down_left % 8 == 7) {
+                        break;
+                    }
+                    if (boardArr[down_left] == EMPTY) {
+                        if (find(legalMoves.begin(), legalMoves.end(), down_left) == legalMoves.end()) {
+                            legalMoves.push_back(down_left);
                         }
                     }
                 }
-                else {
-                }
-                //UP-RIGHT
-                if (!((i-8 < 0) || (i % 8 == 7)))
+            }
+            else {
+            }
+            //UP-RIGHT
+            if (!((i-8 < 0) || (i % 8 == 7)))
+            {
+                while (boardArr[up_right] == opponent)
                 {
-                    while (boardArr[up_right] == WHITE)
+                    up_right -= 7;
+                    if (up_right % 8 == 0 || up_right < 0)
                     {
-                        up_right -= 7;
-                        if (up_right % 8 == 0 || up_right < 0)
+                        break;
+                    }
+                    if (boardArr[up_right] == EMPTY)
+                    {
+                        if (find(legalMoves.begin(), legalMoves.end(), up_right) == legalMoves.end())
                         {
-                            break;
-                        }
-                        if (boardArr[up_right] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), up_right) == legalMoves.end())
-                            {
-                                legalMoves.push_back(up_right);
-                            }
+                            legalMoves.push_back(up_right);
                         }
                     }
                 }
-                //UP-LEFT
-                if (!((i-8 < 0) || (i % 8 == 0)))
+            }
+            //UP-LEFT
+            if (!((i-8 < 0) || (i % 8 == 0)))
+            {
+                while (boardArr[up_left] == opponent)
                 {
-                    while (boardArr[up_left] == WHITE)
+                    up_left -= 9;
+                    if (up_left < 0 || up_left % 8 == 7)
                     {
-                        up_left -= 9;
-                        if (up_left < 0 || up_left % 8 == 7)
+                        break;
+                    }
+                    if (boardArr[up_left] == EMPTY)
+                    {
+                        if (find(legalMoves.begin(), legalMoves.end(), up_left) == legalMoves.end())
                         {
-                            break;
-                        }
-                        if (boardArr[up_left] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), up_left) == legalMoves.end())
-                            {
-                                legalMoves.push_back(up_left);
-                            }
+                            legalMoves.push_back(up_left);
                         }
                     }
                 }
             }
         }
     }
-    else if (this->get_turn() == "white")
-    {
-        for (int i = 0;i < 64;i++)
-        {
-            // find white piece
-            if (boardArr[i] == WHITE)
-            {
-                // check for white pieces
-                int up = i - 8;
-                int left = i - 1;
-                int down = i + 8;
-                int right = i + 1;
-
-                int down_right = i + 9;
-                int down_left = i + 7;
-                int up_right = i - 7;
-                int up_left = i - 9;
-                // if not on the top row
-                // UP
-                if (i - 8 < 0) {
-                }
-                else {
-                    // check up if theres a white piece
-                    while (boardArr[up] == BLACK) {
-                        // keeps going up until either hits the edge or finds an empty spot
-                        up -= 8;
-                        if (up < 0) {
-                            break;
-                        }
-                        if (boardArr[up] == EMPTY) {
-                            // this is a legal move
-                            if (find(legalMoves.begin(), legalMoves.end(), up) == legalMoves.end()) {
-                                legalMoves.push_back(up);
-                            }
-                        }
-                    }
-                }
-                // if not on the left most column
-                // LEFT
-                if (i % 8 == 0) {
-                }
-                else {
-                    while (boardArr[left] == BLACK) {
-                        left -= 1;
-                        if (left % 8 == 7) {
-                            break;
-                        }
-                        if (boardArr[left] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), left) == legalMoves.end()) {
-                                legalMoves.push_back(left);
-                            }
-                        }
-                    }
-                }
-                //DOWN
-                if (i >= 55) {
-                }
-                else {
-                    while (boardArr[down] == BLACK) {
-                        down += 8;
-                        if (down > 63) {
-                            break;
-                        }
-                        if (boardArr[down] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), down) == legalMoves.end()) {
-                                legalMoves.push_back(down);
-                            }
-                        }
-                    }
-                }
-                //RIGHT
-                if (i % 8 == 7) {
-                }
-                else {
-                    while (boardArr[right] == BLACK) {
-                        right += 1;
-                        if (right % 8 == 0) {
-                            break;
-                        }
-                        if (boardArr[right] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), right) == legalMoves.end()) {
-                                legalMoves.push_back(right);
-                            }
-                        }
-                    }
-                }
-                //DOWN-RIGHT
-                if (!((i >= 55) || (i % 8 == 7)))
-                {
-                    while (boardArr[down_right] == BLACK)
-                    {
-                        down_right += 9;
-                        if (down_right > 63 || down_right % 8 == 0)
-                        {
-                            break;
-                        }
-                        if (boardArr[down_right] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), down_right) == legalMoves.end())
-                            {
-                                legalMoves.push_back(down_right);
-                            }
-                        }
-                    }
-                }
-                //DOWN-LEFT
-                if (i < 55 || i % 8 == 0) {
-                    while (boardArr[down_left] == BLACK) {
-                        down_left += 7;
-                        if (down_left > 63 || down_left % 8 == 7) {
-                            break;
-                        }
-                        if (boardArr[down_left] == EMPTY) {
-                            if (find(legalMoves.begin(), legalMoves.end(), down_left) == legalMoves.end()) {
-                                legalMoves.push_back(down_left);
-                            }
-                        }
-                    }
-                }
-                else {
-                }
-                //UP-RIGHT
-                if (!((i-8 < 0) || (i % 8 == 7)))
-                {
-                    while (boardArr[up_right] == BLACK)
-                    {
-                        up_right -= 7;
-                        if (up_right % 8 == 0 || up_right < 0)
-                        {
-                            break;
-                        }
-                        if (boardArr[up_right] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), up_right) == legalMoves.end())
-                            {
-                                legalMoves.push_back(up_right);
-                            }
-                        }
-                    }
-                }
-                //UP-LEFT
-                if (!((i-8 < 0) || (i % 8 == 0)))
-                {
-                    while (boardArr[up_left] == BLACK)
-                    {
-                        up_left -= 9;
-                        if (up_left < 0 || up_left % 8 == 7)
-                        {
-                            break;
-                        }
-                        if (boardArr[up_left] == EMPTY)
-                        {
-                            if (find(legalMoves.begin(), legalMoves.end(), up_left) == legalMoves.end())
-                            {
-                                legalMoves.push_back(up_left);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    // for(auto j = legalMoves.begin(); j != legalMoves.end();++j)
-    // {
-    // 	cout << *j <<  " " << endl;
-    // }
     return legalMoves;
-    //return the vector
 }
+
 
 // put in legal moves ///////////////////////////////////////////////////////
 void OthelloBoard::play_move(int tile)

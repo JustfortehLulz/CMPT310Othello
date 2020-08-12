@@ -5,6 +5,8 @@
 #include "MCTS.h"
 #include <algorithm>
 #include "Node.h"
+#define BLACK 0
+#define WHITE 1
 
 
 using namespace std;
@@ -33,7 +35,7 @@ int main(int argc, char const *argv[])
                 cout << "Black Move" << endl;
                 cout << "BLACK LEGAL MOVES" << endl;
 
-                moves = Board.check_legal_moves();
+                moves = Board.check_legal_moves(BLACK);
                 for (auto j = moves.begin(); j != moves.end(); ++j) {
                     cout << *j << " " << endl;
                 }
@@ -57,7 +59,7 @@ int main(int argc, char const *argv[])
                 cout << "White Move" << endl;
                 cout << "WHITE LEGAL MOVES" << endl;
 
-                moves = Board.check_legal_moves();
+                moves = Board.check_legal_moves(WHITE);
                 for (auto j = moves.begin(); j != moves.end(); ++j) {
                     cout << *j << " " << endl;
                 }
@@ -117,6 +119,7 @@ int main(int argc, char const *argv[])
     TestNodeBoard.print_board();
     TestNode.PrintNode();
 
-
+    cout << !0 << endl;
+    cout << !1 << endl;
     return 0;
 }
