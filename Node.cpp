@@ -165,7 +165,7 @@ void Node::makeOptimalRobustMove() {
 
 void Node::nodeExpansion()
 {
-    int Param = 900;
+    int Param = 700;
     int counter = 0;
     srand(time(NULL));
     int NumberOfPlayouts = 0;
