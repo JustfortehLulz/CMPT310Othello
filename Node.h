@@ -4,7 +4,6 @@
 
 class Node
 {
-private:
 public:
     OthelloBoard BoardState;
 
@@ -17,6 +16,7 @@ public:
     Node();
     Node(Node &ParentNode);
     Node(OthelloBoard &StartState);
+
     void PlayMove(int index);
 
     void PrintNode();

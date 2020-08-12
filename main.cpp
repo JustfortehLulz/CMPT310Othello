@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
 {
     Node *board = new Node();
     vector<int> moves;
-    int counter = 0;
+    int num_turns = 0;
 
     srand(time(NULL));
 
@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
         if (current_turn == "black")
         {
             cout << endl;
-            cout << "AI 1 Turn " << counter << endl;
+            cout << "AI 1 Turn " << num_turns << endl;
             auto current_time = std::chrono::high_resolution_clock::now();
             board->nodeExpansion();
             auto end_time = std::chrono::high_resolution_clock::now();
@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
 
             //This block of code to run black as AI2
             cout << endl;
-            cout << "AI 2 Turn " << counter << endl;
+            cout << "AI 2 Turn " << num_turns << endl;
             auto current_time = std::chrono::high_resolution_clock::now();
             board->nodeExpansion();
             auto end_time = std::chrono::high_resolution_clock::now();
@@ -62,10 +62,10 @@ int main(int argc, char const *argv[])
         //        cout << "Board State #: " << counter << endl;
         //        string isTerminus = board->BoardState.is_legal_moves() ? "FALSE" : "TRUE";
         //        cout << "Is Board State Terminus? " << isTerminus << endl;
-        counter++;
+        num_turns++;
     }
-    board->BoardState.print_board();
-    board->BoardState.end_score();
+    //    board->BoardState.print_board();
+    board->BoardState.print_end_score();
     double Value = board->BoardState.rolloutValue();
     if (Value > 0)
     {
