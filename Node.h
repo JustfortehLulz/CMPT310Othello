@@ -47,5 +47,7 @@ public:
 
     /* Check if the game has reached end game state.*/
     bool isTerminus();
+
+    bool isIndexInBounds();
 };
 

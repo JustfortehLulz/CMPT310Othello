@@ -30,13 +30,13 @@ int main(int argc, char const *argv[])
             int randIndex = rand() % moves.size();
             board->BoardState.play_move(moves.at(randIndex));
         }
-        board->BoardState.print_board();
-        cout << "Board State #: " << counter << endl;
-        string isTerminus = board->BoardState.is_legal_moves() ? "TRUE" : "FALSE";
-        cout << "Is Board State Terminus? " << isTerminus << endl;
-        board->BoardState.end_score();
+//        board->BoardState.print_board();
+//        cout << "Board State #: " << counter << endl;
+//        string isTerminus = board->BoardState.is_legal_moves() ? "FALSE" : "TRUE";
+//        cout << "Is Board State Terminus? " << isTerminus << endl;
         counter++;
     }
+    board->BoardState.end_score();
 
 //    cout << "-----------INITIAL BOARD-------------" << endl;
 //    Board.print_board();

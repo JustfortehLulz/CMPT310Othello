@@ -1,4 +1,5 @@
 #include "Node.h"
+#include <iostream>
 #include <string>
 #include "math.h"
 #include <ctime>
@@ -70,18 +71,33 @@ int Node::getUCB1Index() {
             maxValue = currentUCB;
             maxIndex = i;
         }
+        if (maxIndex >= BoardState.current_legal_moves().size()){
+            maxIndex = 0;
+        }
     }
     return maxIndex;
 }
+bool Node::isIndexInBounds() {
+    vector<int> ValidMoves = BoardState.current_legal_moves();
+    if(getUCB1Index() >= ValidMoves.size()){
+        cout << "UCB1 Index: " << getUCB1Index() << " Valid Moves Size: " << ValidMoves.size() << endl;
+        return false;
+    }
+    return true;
+}
+
 void Node::makeOptimalMove(){
     int maxIndex = getUCB1Index();
     vector<int> ValidMoves = BoardState.current_legal_moves();
+    if (!isIndexInBounds()){
+        cout << "UCB1 Index out of bounds" << endl;
+    }
     BoardState.play_move(ValidMoves.at(maxIndex));
 }
 
 
 void Node::nodeExpansion(){
-    int Param = 100;
+    int Param = 400;
     int counter = 0;
     srand(time(NULL));
     time_t start_time;
